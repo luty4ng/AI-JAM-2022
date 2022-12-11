@@ -1,1 +1,1 @@
-# AI JAM
+# AI JAM 2022
