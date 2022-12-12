@@ -6,6 +6,18 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/GameMain/Arts/40-Simple Icons-Free/Scenes/Demo.unity
-    guid: 2cda990e2423bbf4892e6590ba056729
+    path: Assets/GameMain/Example/DialogExample/DialogExample.unity
+    guid: dcd4174b196fe124eacfb9ef608aa2b5
+  - enabled: 1
+    path: Assets/GameMain/Example/SceneExample/SceneA.unity
+    guid: 58a02acf7024d054a9bbd15426e5ca14
+  - enabled: 1
+    path: Assets/GameMain/Example/SceneExample/SceneB.unity
+    guid: 614076911ad591c4fbd4853c912a5eae
+  - enabled: 1
+    path: Assets/GameMain/Example/SceneExample/SceneC.unity
+    guid: 508cab12a860e444e8b7e847047fe9f3
+  - enabled: 1
+    path: Assets/GameMain/Scenes/GameMain.unity
+    guid: ebb0c91fdb096184383bbed902a7100b
   m_configObjects: {}
