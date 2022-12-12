@@ -9,6 +9,8 @@ namespace GameKit
     {
 
         private Dictionary<string, UIGroup> panels = new Dictionary<string, UIGroup>();
+
+        //注册ui
         public void RegisterUI(UIGroup panel)
         {
             if (panels == null)
@@ -20,12 +22,14 @@ namespace GameKit
                 panels[panel.gameObject.name] = panel;
         }
 
+        //从注册表中移除
         public void RemoveUI(UIGroup panel)
         {
             if (panels.ContainsKey(panel.gameObject.name))
                 panels.Remove(panel.gameObject.name);
         }
 
+        //移除所有UI
         public void Clear()
         {
             if (panels == null)
@@ -34,6 +38,7 @@ namespace GameKit
                 panels.Clear();
         }
         
+        //若注册表里存在 则展示UI
         public void ShowUI(string uiName, UnityAction callback = null)
         {
             if (panels.ContainsKey(uiName))

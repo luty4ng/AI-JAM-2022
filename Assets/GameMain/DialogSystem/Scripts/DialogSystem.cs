@@ -4,12 +4,16 @@ using Febucci.UI;
 using GameKit.DataStructure;
 using GameKit;
 using UnityEngine.Events;
+using Assets.GameMain.DialogSystem.Scripts.UI;
+
 [DisallowMultipleComponent]
 [AddComponentMenu("GameKit/Dialog System")]
 public class DialogSystem : MonoSingletonBase<DialogSystem>
 {
     public static bool IsActive = true;
+    //对象池
     public CharacterPool characterPool;
+    //
     private DialogTree dialogTree;
     private UI_DialogSystem uI_DialogSystem;
     private TextAnimatorPlayer textAnimatorPlayer;
@@ -17,12 +21,15 @@ public class DialogSystem : MonoSingletonBase<DialogSystem>
     private List<RuntimeAnimatorController> charaAnimators = new List<RuntimeAnimatorController>();
     private bool isOptionShowing = false;
     private bool isInSelection = false;
+    //对话是否正在陆续显示中
     private bool isTextShowing = false;
 
 
     private void Start()
     {
+        //在ui注册表中获取对话框的ui面板
         uI_DialogSystem = UIManager.instance.GetUI<UI_DialogSystem>("UI_DialogSystem");
+        //
         textAnimatorPlayer = uI_DialogSystem.textAnimatorPlayer;
     }
     
@@ -32,7 +39,9 @@ public class DialogSystem : MonoSingletonBase<DialogSystem>
         isTextShowing = false;
         dialogTree = DialogManager.instance.CreateTree(title, dialogText);
         dialogTree.Reset();
+        //显示对话框ui
         uI_DialogSystem.Show();
+        //执行第一句对话
         ExcuteTextDisplay();
     }
 
@@ -41,14 +50,18 @@ public class DialogSystem : MonoSingletonBase<DialogSystem>
         if (IsActive == false || dialogTree == null)
             return;
 
+        //这是选项已显示完全 且进入选择的情况
         if (!isOptionShowing && isInSelection)
         {
             if (Input.GetKeyDown(KeyCode.Space))
             {
                 int choiceIndex = uI_DialogSystem.GetSelection();
+                //选择状态取消
                 isInSelection = false;
+                //下一句对话根据选项改变
                 Node<Dialog> nextNode = GetNextNode(choiceIndex);
                 ExcuteTextDisplay();
+                //隐藏选项
                 uI_DialogSystem.HideResponse(() =>
                 {
                     uI_DialogSystem.uI_DialogResponse.IsActive = false;
@@ -58,22 +71,26 @@ public class DialogSystem : MonoSingletonBase<DialogSystem>
             }
         }
 
+        //这是正常情况
         if (!isInSelection)
         {
             if (Input.GetKeyDown(KeyCode.Space))
             {
+                //若文字不是在打印中 则执行下一句对话
                 if (isTextShowing == false)
                 {
                     ExcuteTextDisplay();
-                }
+                }//否则加速对话
                 else
                     InterruptTextDisplay();
             }
         }
 
+        //若没有文字显示 则隐藏
         uI_DialogSystem.indicator.SetActive(!isTextShowing);
     }
 
+    //进入选择模式
     private void UpdateChoiceUI()
     {
         List<Option> options = dialogTree.GetOptions();
@@ -106,6 +123,7 @@ public class DialogSystem : MonoSingletonBase<DialogSystem>
         else
             uI_DialogSystem.speakerName.text = node.nodeEntity.speaker;
         uI_DialogSystem.contents.text = node.nodeEntity.contents;
+
 
         if (node.nodeEntity.speaker != ">>")
         {
@@ -195,12 +213,20 @@ public class DialogSystem : MonoSingletonBase<DialogSystem>
             }
         }
     }
+    /// <summary>
+    /// 执行对话
+    /// </summary>
+    /// <param name="index"></param>
     private void ExcuteTextDisplay(int index = 0)
     {
         Node<Dialog> nextNode = GetNextNode(index);
         ExcuteTextDisplay(nextNode);
     }
 
+
+    /// <summary>
+    /// 加速对话
+    /// </summary>
     private void InterruptTextDisplay()
     {
         textAnimatorPlayer.SkipTypewriter();

@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fd72dcfa5d28cac40a3be446a5ab8f87, type: 3}
+  m_Name: "\u590D\u9009\u6D4B\u8BD5"
+  m_EditorClassIdentifier: 
+  title: "\u590D\u9009\u6D4B\u8BD5"
+  contents: "[name-E]\uFF1F\uFF1F\uFF1A\u5F00\u59CB\u5D4C\u5957\u6D4B\u8BD5\n\n[sbranch-A]\u5353\u62C9\uFF1A\u544A\u8BC9\u6211\u4F60\u73B0\u5728\u8981\u5403\u4EC0\u4E48\uFF01\n\r\n   
+    [name-A1, linkfrom-A]\u4F0A\u68EE\uFF1A\u65E9\u4E0A\u597D\u4E2D\u56FD \u6211\u8981\u5403\u51B0\u6DC7\u6DCB\uFF01\r\n\r\n   
+    [sbranch-A1_B] \u4F0A\u68EE\uFF1A\u4EC0\u4E48\u53E3\u5473\u7684\u51B0\u6DC7\u6DCB\uFF01\r\n\r\n       
+    [name-A1_B1, linkfrom-A1_B] \u4F0A\u68EE\uFF1A\u9999\u8549\u53E3\u5473\uFF01\r\n\r\n       
+    \u5353\u62C9\uFF1A\u597D\u602A\uFF01\r\n\r\n        [linkto-A1_B_end] \u5353\u62C9\uFF1A\u7ED9\u4F60\u9999\u8549\u53E3\u5473\u7684\u51B0\u6DC7\u6DCB\uFF01\r\n\r\n\r\n       
+    [name-A1_B2, linkfrom-A1_B] \u4F0A\u68EE\uFF1A\u8349\u8393\u53E3\u5473\uFF01\r\n\r\n       
+    \u5353\u62C9\uFF1A\u597D\u666E\u901A\uFF01\r\n\r\n        [linkto-A1_B_end] \u5353\u62C9\uFF1A\u7ED9\u4F60\u8349\u8393\u53E3\u5473\u7684\u51B0\u6DC7\u6DCB\uFF01\r\n\r\n   
+    \n        \u4F0A\u68EE\uFF1A\u83B7\u5F97\u51B0\u6DC7\u6DCB\uFF01\r\n      [name-A1_B_end,gdivider-(1)
+    C D,gcomplete-(2)]\r\n\n    [name-C]trojan\uFF1A\u6211\u4E5F\u8981\u5403\u51B0\u6DC7\u6DCB\uFF01\n   
+    \u4F0A\u68EE\uFF1A\u4E0D\u7ED9\uFF01\n[ebranch]\n\n[name-D]trojan\uFF1A\u6211\u4E5F\u8981\u5403\u51B0\u6DC7\u6DCB!\n\u4F0A\u68EE\uFF1A\u90A3\u7ED9\u4F60\u4E03\u5427\uFF01\n
+    [ebranch-A]\n\n\r\n\n    [name-A2, linkfrom-A] \u4F0A\u68EE\uFF1A\u5403\u5DE7\u514B\u529B\r\n\n   
+    [ gcomplete-(1)]trojan\uFF1A\u4E0D\u7ED9\uFF01\r\n\r\n[name-A_end]\u4F0A\u68EE\uFF1A\u641E\u534A\u5929\u53EA\u80FD\u9009\u51B0\u6DC7\u6DCB\uFF01\n[cdivider-(2)
+    A E]"

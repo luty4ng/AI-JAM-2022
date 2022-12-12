@@ -13,9 +13,8 @@ MonoBehaviour:
   m_Name: "\u987A\u5E8F\u6D4B\u8BD5"
   m_EditorClassIdentifier: 
   title: "\u987A\u5E8F\u6D4B\u8BD5"
-  contents: ">>\uFF1A<shake a=0.2>I can do whatever the fuck I want.</shake>\n>>\uFF1A<shake
+  contents: "\u5927\u536B\uFF1A<shake a=0.2>\n\n\uFF1F\uFF1F\uFF1A<shake a=0.2>\u6211\u662F\u901A\u7528\u672A\u77E5\u4EBA\u7269</shake>\n\n\u5353\u62C9\uFF1A<shake
+    a=0.2>\u4F60\u505A\u4EC0\u4E48\u4E86</shake>\n\n\u5927\u536B\uFF1A<shake a=0.2>\u6211\u6361\u5230\u4E00\u4E2A\u5B9D\u77F3</shake>\n\n>>\uFF1A<shake
     a=0.2>I can do whatever the fuck I want.</shake>\n>>\uFF1A<shake a=0.2>I can
     do whatever the fuck I want.</shake>\n>>\uFF1A<shake a=0.2>I can do whatever
-    the fuck I want.</shake>\n>>\uFF1A<shake a=0.2>I can do whatever the fuck I want.</shake>\n>>\uFF1A<shake
-    a=0.2>I can do whatever the fuck I want.</shake>\n>>\uFF1A<shake a=0.2>I can
-    do whatever the fuck I want.</shake>\n\r\n\n\r\n"
+    the fuck I want.</shake>\n\r\n\n\r\n"

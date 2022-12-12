@@ -10,17 +10,22 @@ namespace GameKit
     [RequireComponent(typeof(CanvasGroup))]
     public class UIGroup : UIBehaviour
     {
+
+        //是否可用
         private bool isActive;
         public new virtual bool IsActive
         {
             get { return isActive; }
             set { isActive = value; }
         }
+
+
         private Dictionary<string, List<UIBehaviour>> uiComponet = new Dictionary<string, List<UIBehaviour>>();
         protected CanvasGroup panelCanvasGroup;
         protected override void Awake()
         {
             isActive = true;
+            
             UIManager.instance.RegisterUI(this as UIGroup);
             FindChildrenByType<Button>();
             FindChildrenByType<Image>();

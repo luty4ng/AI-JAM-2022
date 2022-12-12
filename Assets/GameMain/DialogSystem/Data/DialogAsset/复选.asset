@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fd72dcfa5d28cac40a3be446a5ab8f87, type: 3}
+  m_Name: "\u590D\u9009"
+  m_EditorClassIdentifier: 
+  title: 
+  contents: "\r\n\uFF1F?\uFF1A\u5F00\u59CB\u590D\u9009\u6D4B\u8BD5\r\n\r\n[sbranch-A]\u4F0A\u68EE\uFF1A\u6211\u9700\u8981\u9009\u62E9\u5B8C\u4E09\u4E2A\u9009\u9879\uFF0C\u5E2E\u52A9\u6240\u6709\u4EBA\u83B7\u53D6\u9053\u5177\r\n\r\n\t//
+    \u7B2C\u4E00\u4E2A\u5206\u652F\u9009A1\r\n\r\n\t[name-A1, linkfrom-A]\u4F0A\u68EE\uFF1A
+    \u53BB\u627E\u5927\u536B\r\n\r\n\t\u5927\u536B\uFF1A\u83B7\u5F97\u5723\u676F\uFF0C\r\n\t\r\n\t[cdivider-(1&2&3)
+    A_end A, ccomplete-(1)]\r\n\t\r\n\t// \u7B2C\u4E00\u4E2A\u5206\u652F\u9009A2\r\n\r\n\t[name-A2,
+    linkfrom-A] \u4F0A\u68EE\uFF1A\u53BB\u627E\u5353\u62C9\r\n\t\u5353\u62C9\uFF1A\u83B7\u5F97\u82F9\u679C\r\n\r\n\r\n\t[cdivider-(1&2&3)
+    A_end A, ccomplete-(2)]\r\n\t\r\n\t// \u7B2C\u4E00\u4E2A\u5206\u652F\u9009A3\r\n\r\n\t[name-A3,
+    linkfrom-A] \u4F0A\u68EE\uFF1A\u53BB\u627Etrojan\r\n\t\r\n\ttrojan\uFF1A\u83B7\u5F97\u67E0\u6AAC\u8336\r\n\r\n\t[cdivider-(1&2&3)
+    A_end A, ccomplete-(3)]\r\n\r\n[ebranch-A_end] trojan\uFF1Aok\u611F\u8C22\u4F60\u5BF9\u6240\u6709\u4EBA\u7684\u5E2E\u52A9\uFF0C\u73B0\u5728\u6EDA\u5427"

@@ -9,16 +9,23 @@ using UnityEngine.Events;
 
 public class UI_DialogResponse : UIGroup
 {
+    //选项选择器
     public UI_Selector selector;
+    //选项合集
     public List<UI_DialogOption> ui_options = new List<UI_DialogOption>();
+    //现有选项
     private List<Option> currentOptions = new List<Option>();
+    //垂直布局
     private VerticalLayoutGroup verticalLayoutGroup;
+    //
     private Sequence selectorSeq;
     private int currentIndex = 0;
     private float animDistance = 0;
+    //选项初始位置
     private Vector2 selectorInitPos = Vector2.zero;
     private Animator animator;
 
+    //当前选项指数
     public int CurIndex
     {
         get

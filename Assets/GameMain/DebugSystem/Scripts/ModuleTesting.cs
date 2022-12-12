@@ -13,6 +13,7 @@ public class ModuleTesting : MonoBehaviour
     public List<DialogAsset> dialogAssets;
     private CanvasGroup canvasGroup;
     private bool isShown = false;
+
     private void Start()
     {
         dialogSystem = DialogSystem.current;
@@ -43,6 +44,7 @@ public class ModuleTesting : MonoBehaviour
         else
             HideAllModules();
     }
+
     // 给Button用的
     public void DialogTest()
     {
