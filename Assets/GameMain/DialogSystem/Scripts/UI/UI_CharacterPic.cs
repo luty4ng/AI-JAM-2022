@@ -11,6 +11,8 @@ namespace Assets.GameMain.DialogSystem.Scripts.UI
         public void OnInit()
         {
             characterPic = GetComponentInChildren<Image>();
+            this.gameObject.SetActive(false);
+
         }
     }
 }

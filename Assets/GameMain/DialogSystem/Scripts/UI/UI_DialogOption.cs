@@ -3,11 +3,15 @@ using UnityEngine.UI;
 using TMPro;
 using GameKit;
 using UnityEngine.EventSystems;
+
+//这个是选项本身
 public class UI_DialogOption : UIForm, IPointerDownHandler, IPointerEnterHandler, IPointerExitHandler
 {
+    //文本内容
     public TextMeshProUGUI content;
     public int index = 0;
     private Button button;
+    //选项内容
     public UI_DialogResponse response;
 
     public void OnInit(UI_DialogResponse response)

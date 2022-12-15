@@ -7,6 +7,7 @@ using GameKit;
 using System.Linq;
 using UnityEngine.Events;
 
+//这个是选项内的回答
 public class UI_DialogResponse : UIGroup
 {
     //选项选择器

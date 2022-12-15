@@ -5,17 +5,25 @@ using GameKit.DataStructure;
 using GameKit;
 using UnityEngine.Events;
 using Assets.GameMain.DialogSystem.Scripts.UI;
+using System;
 
+
+
+//这里是处理对话界面的逻辑
 [DisallowMultipleComponent]
 [AddComponentMenu("GameKit/Dialog System")]
 public class DialogSystem : MonoSingletonBase<DialogSystem>
 {
+
+    private int SceneID = 1; 
     public static bool IsActive = true;
     //对象池
     public CharacterPool characterPool;
     //
     private DialogTree dialogTree;
+    //对话框ui界面
     private UI_DialogSystem uI_DialogSystem;
+
     private TextAnimatorPlayer textAnimatorPlayer;
     private Character currentCharacter;
     private List<RuntimeAnimatorController> charaAnimators = new List<RuntimeAnimatorController>();
@@ -23,21 +31,26 @@ public class DialogSystem : MonoSingletonBase<DialogSystem>
     private bool isInSelection = false;
     //对话是否正在陆续显示中
     private bool isTextShowing = false;
-
-
+    //对话是否已经结束了
+    public  bool isDialogEnd = false;
     private void Start()
     {
         //在ui注册表中获取对话框的ui面板
         uI_DialogSystem = UIManager.instance.GetUI<UI_DialogSystem>("UI_DialogSystem");
-        //
+        
         textAnimatorPlayer = uI_DialogSystem.textAnimatorPlayer;
     }
     
+    //根据对话资源开始对话
     public void StartDialog(string title, string dialogText)
     {
         Debug.Log($"Start Dialog");
+        SceneID += 1;
+        isDialogEnd = false;
         isTextShowing = false;
+        //创建对话树
         dialogTree = DialogManager.instance.CreateTree(title, dialogText);
+        //重设对话树节点
         dialogTree.Reset();
         //显示对话框ui
         uI_DialogSystem.Show();
@@ -110,6 +123,7 @@ public class DialogSystem : MonoSingletonBase<DialogSystem>
         }
     }
 
+    //对话进行角色改变
     private void UpdateUI(Node<Dialog> node)
     {
         // Debug.Log($"Update Character UI");
@@ -136,6 +150,7 @@ public class DialogSystem : MonoSingletonBase<DialogSystem>
         }
     }
 
+    //打印文本节点
     private void PhaseNode(Node<Dialog> dialogNode, UnityAction onTextShowed = null)
     {
         UpdateUI(dialogNode);
@@ -161,6 +176,8 @@ public class DialogSystem : MonoSingletonBase<DialogSystem>
         dialogTree.currentNode = dialogTree.currentNode.Sons[index];
         return dialogTree.currentNode as Node<Dialog>;
     }
+
+    //开始
     private void ExcuteTextDisplay(Node<Dialog> nextNode)
     {
         if (nextNode == null)
@@ -169,6 +186,7 @@ public class DialogSystem : MonoSingletonBase<DialogSystem>
             return;
         }
 
+        isDialogEnd = false;
         if (nextNode.nodeEntity.IsFunctional)
         {
             if (nextNode.nodeEntity.IsCompleter)
@@ -221,6 +239,12 @@ public class DialogSystem : MonoSingletonBase<DialogSystem>
     {
         Node<Dialog> nextNode = GetNextNode(index);
         ExcuteTextDisplay(nextNode);
+        //每次执行更新人物画面
+        if (uI_DialogSystem.uI_SpeakerPicLeft.overrideSprite!=currentCharacter.characterPic)
+        {
+            uI_DialogSystem.uI_SpeakerPicLeft.overrideSprite = currentCharacter.characterPic;
+        }
+        
     }
 
 
@@ -239,6 +263,17 @@ public class DialogSystem : MonoSingletonBase<DialogSystem>
         dialogTree.Clear();
         dialogTree = null;
         uI_DialogSystem.Hide();
+        isDialogEnd = true;
+        
+        GoToNextScene("SceneID_ "+SceneID );
+    }
+
+    public void GoToNextScene(string name)
+    {
+        Scheduler.current.SwitchSceneByDefault(name, () =>
+        {
+            Debug.Log(string.Format("场景{0}切换完毕", name));
+        });
     }
 
     private RuntimeAnimatorController FindAnimator(string name)

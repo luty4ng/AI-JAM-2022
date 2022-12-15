@@ -8,6 +8,7 @@ using UnityEngine.Events;
 
 namespace Assets.GameMain.DialogSystem.Scripts.UI
 {
+    //这里是处理对话界面的显示
     public class UI_DialogSystem : UIGroup
     {
         //说话者的名字
@@ -18,12 +19,20 @@ namespace Assets.GameMain.DialogSystem.Scripts.UI
         public TextAnimatorPlayer textAnimatorPlayer;
         //选项面板
         public UI_DialogResponse uI_DialogResponse;
+
         //对话者的图像
-        public UI_CharacterPic uI_CharacterPic;
+        public Image uI_SpeakerPicLeft;
+        public Image uI_SpeakerPicRight;
+
+        //对话背景
+        public Image ui_backGround;
+        
+
         public GameObject indicator;
         private Animator animator;
 
         protected override void OnStart()
+
         {
             base.OnStart();
             // panelCanvasGroup.alpha = 0;
@@ -46,6 +55,19 @@ namespace Assets.GameMain.DialogSystem.Scripts.UI
             uI_DialogResponse.Hide(callback);
         }
 
+        public void ShowSpeaker(UnityAction callback = null)
+        {
+            uI_SpeakerPicLeft.gameObject.SetActive(true);
+            uI_SpeakerPicRight.gameObject.SetActive(true);
+        }
+        public void ShowSpeakerLeft(UnityAction callback = null)
+        {
+            uI_SpeakerPicLeft.gameObject.SetActive(true);
+        }
+        public void ShowSpeakerRight(UnityAction callback = null)
+        {
+            uI_SpeakerPicRight.gameObject.SetActive(true);
+        }
         //获得选项
         public int GetSelection()
         {

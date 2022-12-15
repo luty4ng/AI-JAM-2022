@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: "\u5206\u652F\u6D4B\u8BD5"
   m_EditorClassIdentifier: 
   title: "\u5206\u652F\u6D4B\u8BD5"
-  contents: "\r\u6D4B\u8BD5\u5458B\uFF1A\u5F00\u59CB\u6D4B\u8BD5\r\n\r\n[sbranch-A]\u6D4B\u8BD5\u5458B\uFF1A\u5206\u652F\u70B9A\r\n\r\n\t//
+  contents: "\r\u6D4B\u8BD5\u5458D\uFF1A\u5F00\u59CB\u6D4B\u8BD5\r\n\r\n[sbranch-A]\u6D4B\u8BD5\u5458B\uFF1A\u5206\u652F\u70B9A\r\n\r\n\t//
     \u7B2C\u4E00\u4E2A\u5206\u652F\u9009A1\r\n\r\n\t[name-A1, linkfrom-A]\u6D4B\u8BD5\u5458A\uFF1A\u5206\u652F\u7EBFA1\r\n\r\n\t\u6D4B\u8BD5\u5458C\uFF1A\u5206\u652F\u7EBFA1\u540E\u7EED\r\n\r\n\t[linkto-A_end]
     \u6D4B\u8BD5\u5458A\uFF1A\u5206\u652F\u7EBFA1\u7ED3\u675F\r\n\t\r\n\t// \u7B2C\u4E00\u4E2A\u5206\u652F\u9009A2\r\n\r\n\t[name-A2,
     linkfrom-A] \u6D4B\u8BD5\u5458A\uFF1A\u5206\u652F\u7EBFA2\r\n\t\r\n\t\u6D4B\u8BD5\u5458B\uFF1A\u5206\u652F\u7EBFA2\u540E\u7EED\r\n\r\n\t[linkto-A_end]

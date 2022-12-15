@@ -179,6 +179,10 @@ PrefabInstance:
       value: GameKit
       objectReference: {fileID: 0}
     - target: {fileID: 580546839134591289, guid: 0d9804c5c560d1b458025b708648bb13, type: 3}
+      propertyPath: StartScene
+      value: GameMenu
+      objectReference: {fileID: 0}
+    - target: {fileID: 580546839134591289, guid: 0d9804c5c560d1b458025b708648bb13, type: 3}
       propertyPath: defaultSwitchType
       value: 1
       objectReference: {fileID: 0}

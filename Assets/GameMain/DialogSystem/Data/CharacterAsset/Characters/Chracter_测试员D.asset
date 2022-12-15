@@ -10,10 +10,16 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f3d0ed17694105c43adcd00298bee7e5, type: 3}
-  m_Name: yisen
+  m_Name: "Chracter_\u6D4B\u8BD5\u5458D"
   m_EditorClassIdentifier: 
   idName: D
-  displayName: "\u4F0A\u68EE"
+  displayName: "\u6D4B\u8BD5\u5458D"
   iconicColor: {r: 0, g: 0, b: 0, a: 0}
-  introduction: "\u8FD9\u4E2A\u4EBA\u662Ftrojan"
-  moods: []
+  introduction: "\u8FD9\u4E2A\u4EBA\u662F\u6D4B\u8BD5\u5458D"
+  moods:
+  - Name: Default
+    avatar: {fileID: 21300000, guid: 772e0ee950fc3a149aa9bdef2604fe44, type: 3}
+    half: {fileID: 0}
+  - Name: Happy
+    avatar: {fileID: 21300000, guid: 9a2fe29444778b644b2bf9f8326fb2df, type: 3}
+    half: {fileID: 0}
