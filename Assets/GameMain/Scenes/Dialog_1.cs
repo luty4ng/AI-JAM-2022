@@ -7,6 +7,8 @@ public class Dialog_1 : MonoBehaviour
     public DialogAsset dialogAsset;
     public GameObject Hint;
     public GameObject Bkg;
+    public GameObject GameUI;
+    
 
     void Update()
     {
@@ -15,6 +17,12 @@ public class Dialog_1 : MonoBehaviour
             Hint.SetActive(false);
             DialogSystem.current.StartDialog(dialogAsset.title, dialogAsset.contents);
         }
+
+        if (DialogSystem.SceneID >= 0)
+        {
+            GameUI.SetActive(true);
+        }
+   
 
     }
 }

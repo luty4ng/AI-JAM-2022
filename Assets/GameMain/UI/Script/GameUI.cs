@@ -6,8 +6,14 @@ using UnityEngine.UI;
 using System;
 using UnityEngine.SceneManagement;
 
-public class GameUI : UIGroup
+public class GameUI : MonoBehaviour
 {
+    private void Awake()
+    {
+
+        DontDestroyOnLoad(this.gameObject);
+    }
+
     public Button OptionBtn;
     public Button ArchiveBtn;
     public Button BackpackBtn;

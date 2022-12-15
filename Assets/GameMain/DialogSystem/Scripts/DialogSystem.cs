@@ -15,7 +15,7 @@ using System;
 public class DialogSystem : MonoSingletonBase<DialogSystem>
 {
 
-    private int SceneID = 1; 
+    public static int SceneID = 1; 
     public static bool IsActive = true;
     //对象池
     public CharacterPool characterPool;

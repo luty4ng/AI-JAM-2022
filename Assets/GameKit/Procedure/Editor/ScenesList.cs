@@ -11,8 +11,6 @@ public static class ScenesList
     public static void Assets_GameMain_Example_SceneExample_SceneB_unity() { ScenesUpdate.OpenScene("Assets/GameMain/Example/SceneExample/SceneB.unity"); }
     [MenuItem("Scenes/SceneC")]
     public static void Assets_GameMain_Example_SceneExample_SceneC_unity() { ScenesUpdate.OpenScene("Assets/GameMain/Example/SceneExample/SceneC.unity"); }
-    [MenuItem("Scenes/DialogExample")]
-    public static void Assets_GameMain_Scenes_DialogExample_unity() { ScenesUpdate.OpenScene("Assets/GameMain/Scenes/DialogExample.unity"); }
     [MenuItem("Scenes/GameMenu")]
     public static void Assets_GameMain_Scenes_GameMenu_unity() { ScenesUpdate.OpenScene("Assets/GameMain/Scenes/GameMenu.unity"); }
     [MenuItem("Scenes/SceneID_ 1")]

@@ -38,6 +38,9 @@ namespace Assets.GameMain.DialogSystem.Scripts.UI
             // panelCanvasGroup.alpha = 0;
             // this.gameObject.SetActive(false);
             animator = GetComponent<Animator>();
+ 
+               
+            
         }
 
         public void UpdateOptions(List<Option> options)
