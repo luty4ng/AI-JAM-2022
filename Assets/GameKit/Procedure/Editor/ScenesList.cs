@@ -13,6 +13,8 @@ public static class ScenesList
     public static void Assets_GameMain_Example_SceneExample_SceneC_unity() { ScenesUpdate.OpenScene("Assets/GameMain/Example/SceneExample/SceneC.unity"); }
     [MenuItem("Scenes/GameMenu")]
     public static void Assets_GameMain_Scenes_GameMenu_unity() { ScenesUpdate.OpenScene("Assets/GameMain/Scenes/GameMenu.unity"); }
+    [MenuItem("Scenes/SceneID_ 0")]
+    public static void Assets_GameMain_Scenes_SceneID__0_unity() { ScenesUpdate.OpenScene("Assets/GameMain/Scenes/SceneID_ 0.unity"); }
     [MenuItem("Scenes/SceneID_ 1")]
     public static void Assets_GameMain_Scenes_SceneID__1_unity() { ScenesUpdate.OpenScene("Assets/GameMain/Scenes/SceneID_ 1.unity"); }
     [MenuItem("Scenes/SceneID_ 2")]

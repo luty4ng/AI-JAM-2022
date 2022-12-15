@@ -40,7 +40,8 @@ public class MenuUI : UIGroup
     }
     private void OnStartBtnClick()
     {
-        GoToScene("SceneID_ 1");
+      //  GameController.current.current_SceneID = 1;
+        GoToScene("SceneID_ "+DialogSystem.SceneID);
 
 
     }
@@ -51,10 +52,7 @@ public class MenuUI : UIGroup
     }
     private void OnOptionBtnClick()
     {
-        UIManager.instance.ShowUI("OptionUI", () =>
-        {
-            Debug.Log(string.Format("ui«–ªªÕÍ±œ"));
-        });
+        
         //uI_Option.gameObject.SetActive(true);
     }
 

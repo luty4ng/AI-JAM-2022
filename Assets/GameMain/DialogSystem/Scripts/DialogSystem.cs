@@ -15,7 +15,8 @@ using System;
 public class DialogSystem : MonoSingletonBase<DialogSystem>
 {
 
-    public static int SceneID = 1; 
+    
+    public static int SceneID = 0; 
     public static bool IsActive = true;
     //对象池
     public CharacterPool characterPool;
@@ -33,6 +34,9 @@ public class DialogSystem : MonoSingletonBase<DialogSystem>
     private bool isTextShowing = false;
     //对话是否已经结束了
     public  bool isDialogEnd = false;
+
+
+
     private void Start()
     {
         //在ui注册表中获取对话框的ui面板
@@ -45,7 +49,7 @@ public class DialogSystem : MonoSingletonBase<DialogSystem>
     public void StartDialog(string title, string dialogText)
     {
         Debug.Log($"Start Dialog");
-        SceneID += 1;
+        
         isDialogEnd = false;
         isTextShowing = false;
         //创建对话树
@@ -264,8 +268,16 @@ public class DialogSystem : MonoSingletonBase<DialogSystem>
         dialogTree = null;
         uI_DialogSystem.Hide();
         isDialogEnd = true;
-        
-        GoToNextScene("SceneID_ "+SceneID );
+
+        SceneID += 1;
+        if (SceneID < 4)
+        {
+            GoToNextScene("SceneID_ " + SceneID);
+        }
+        else
+        {
+            GoToNextScene("GameMenu");
+        }
     }
 
     public void GoToNextScene(string name)
