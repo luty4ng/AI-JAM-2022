@@ -19,13 +19,14 @@ namespace GameKit
             set { isActive = value; }
         }
 
-
+        public string idName { get; set; }
+        public RectTransform rectTransform { get; set; }
         private Dictionary<string, List<UIBehaviour>> uiComponet = new Dictionary<string, List<UIBehaviour>>();
         protected CanvasGroup panelCanvasGroup;
         protected override void Awake()
         {
             isActive = true;
-            
+
             UIManager.instance.RegisterUI(this as UIGroup);
             FindChildrenByType<Button>();
             FindChildrenByType<Image>();
@@ -42,6 +43,15 @@ namespace GameKit
         }
 
         protected virtual void OnStart() { }
+        public virtual void OnInstantiate()
+        {
+            panelCanvasGroup = GetComponent<CanvasGroup>();
+            rectTransform = GetComponent<RectTransform>();
+            rectTransform.anchoredPosition3D = Vector3.zero;
+            panelCanvasGroup.alpha = 0;
+            Show();
+            UIManager.instance.RegisterUI(this);
+        }
         public virtual void Show(UnityAction callback = null) { }
         public virtual void Hide(UnityAction callback = null) { }
         public T GetUIComponent<T>(string name) where T : UIBehaviour

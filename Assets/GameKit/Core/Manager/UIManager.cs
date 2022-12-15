@@ -8,10 +8,9 @@ namespace GameKit
 {
     public class UIManager : SingletonBase<UIManager>
     {
-
         private Dictionary<string, UIGroup> panels = new Dictionary<string, UIGroup>();
 
-        //×¢²áui
+        //×¢ï¿½ï¿½ui
         public void RegisterUI(UIGroup panel)
         {
             if (panels == null)
@@ -23,14 +22,13 @@ namespace GameKit
                 panels[panel.gameObject.name] = panel;
         }
 
-        //´Ó×¢²á±íÖÐÒÆ³ý
+        //ï¿½ï¿½×¢ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ³ï¿½
         public void RemoveUI(UIGroup panel)
         {
             if (panels.ContainsKey(panel.gameObject.name))
                 panels.Remove(panel.gameObject.name);
         }
 
-        //ÒÆ³ýËùÓÐUI
         public void Clear()
         {
             if (panels == null)
@@ -38,8 +36,8 @@ namespace GameKit
             if (panels.Count > 0)
                 panels.Clear();
         }
-        
-        //Èô×¢²á±íÀï´æÔÚ ÔòÕ¹Ê¾UI
+
+        //ï¿½ï¿½×¢ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Õ¹Ê¾UI
         public void ShowUI(string uiName, UnityAction callback = null)
         {
             if (panels.ContainsKey(uiName))
@@ -74,12 +72,18 @@ namespace GameKit
                 return panels[name];
             return null;
         }
-        
+
         public T GetUI<T>(string name) where T : UIGroup
         {
             if (panels.ContainsKey(name))
                 return panels[name] as T;
             return null;
+        }
+
+        public bool HasUI<T>(string name) where T : UIGroup
+        {
+            // Debug.Log(name);
+            return panels.ContainsKey(name);
         }
     }
 }

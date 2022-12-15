@@ -22,9 +22,7 @@ namespace GameKit
                 group = value;
             }
         }
-        /// <summary>
-        /// Awake is called when the script instance is being loaded.
-        /// </summary>
+        
         protected override void Awake()
         {
             rectTransform = GetComponent<RectTransform>();

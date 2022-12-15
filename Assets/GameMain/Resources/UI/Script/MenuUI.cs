@@ -18,15 +18,15 @@ public class MenuUI : UIGroup
     {
         Scheduler.current.SwitchSceneByDefault(name, () =>
         {
-            Debug.Log(string.Format("³¡¾°{0}ÇÐ»»Íê±Ï", name));
+            Debug.Log(string.Format("ï¿½ï¿½ï¿½ï¿½{0}ï¿½Ð»ï¿½ï¿½ï¿½ï¿½", name));
         });
     }
 
-    public void Start()
+    protected override void Start()
     {
 
        // uI_Option= UIManager.instance.GetUI<OptionUI>("OptionUI");
-
+        base.Start();
         startBtn.onClick.AddListener(OnStartBtnClick);
         continueBtn.onClick.AddListener(OnContinueBtnClick);
         optionBtn.onClick.AddListener(OnOptionBtnClick);

@@ -8,8 +8,9 @@ using UnityEngine.SceneManagement;
 
 public class GameUI : UIGroup
 {
-    private void Awake()
+    protected override void Awake()
     {
+        base.Awake();
         DontDestroyOnLoad(this.gameObject);
     }
 
@@ -27,7 +28,6 @@ public class GameUI : UIGroup
         BackpackBtn.onClick.AddListener(OnBackpackBtnClick);
         ArchiveBtn.onClick.AddListener(OnArchiveBtnClick);
 
-
         uI_Option.SetActive(false);
         uI_Archive.SetActive(false);
         uI_Backpack.SetActive(false);
@@ -40,13 +40,13 @@ public class GameUI : UIGroup
 
     private void OnBackpackBtnClick()
     {
-        //打开界面
+        //锟津开斤拷锟斤拷
         uI_Backpack.SetActive(true);
     }
 
     private void OnOptionBtnClick()
     {
-        //打开界面
+        //锟津开斤拷锟斤拷
         uI_Option.SetActive(true);
     }
 }
