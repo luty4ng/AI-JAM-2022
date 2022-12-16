@@ -14,10 +14,7 @@ public class DialogController: MonoSingletonBase<DialogController>
 
 
 
-    void Awake()
-    {
-        DontDestroyOnLoad(this.gameObject);
-    }
+
     private void Update()
     {
         

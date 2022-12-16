@@ -69,6 +69,8 @@ MonoBehaviour:
   OptionBtn: {fileID: 4807011764366995182}
   ArchiveBtn: {fileID: 5466087433532673604}
   BackpackBtn: {fileID: 5520084925832208383}
+  m_immerseValue: {fileID: 7803982402431003839}
+  m_soberValue: {fileID: 3401716596462989997}
 --- !u!1 &1486466345108032965
 GameObject:
   m_ObjectHideFlags: 0
@@ -541,7 +543,7 @@ GameObject:
   - component: {fileID: 6842900906314327861}
   - component: {fileID: 3401716596462989997}
   m_Layer: 5
-  m_Name: Slider (1)
+  m_Name: SoberSlider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -931,7 +933,7 @@ GameObject:
   - component: {fileID: 4225743505252687839}
   - component: {fileID: 7803982402431003839}
   m_Layer: 5
-  m_Name: Slider
+  m_Name: ImmerseSlider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

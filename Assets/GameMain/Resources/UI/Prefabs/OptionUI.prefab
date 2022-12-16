@@ -120,9 +120,9 @@ MonoBehaviour:
   m_HandleRect: {fileID: 3797764447891592106}
   m_Direction: 0
   m_MinValue: 0
-  m_MaxValue: 1
+  m_MaxValue: 0.1
   m_WholeNumbers: 0
-  m_Value: 0
+  m_Value: 0.1
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -1047,3 +1047,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   quitBtn: {fileID: 3344124377540068382}
   bgmTog: {fileID: 7417251730329776083}
+  bgmValue: {fileID: 7706411802004112769}

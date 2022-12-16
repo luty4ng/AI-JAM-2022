@@ -10,6 +10,23 @@ using UnityEngine.SceneManagement;
 
 public class GameUI : UIGroup
 {
+    public Button HomeBtn;
+    public Button OptionBtn;
+    public Button ArchiveBtn;
+    public Button BackpackBtn;
+    public Slider m_immerseValue;
+    public Slider m_soberValue;
+
+    public void ImmerseAdd(int addNum)
+    {
+        m_immerseValue.DOValue(m_immerseValue.value + addNum, 1f);
+    }
+    public void SoberAdd(int addNum)
+    {
+        m_soberValue.DOValue(m_soberValue.value + addNum, 1f);
+    }
+
+
     public override void Show(UnityAction callback = null)
     {
         panelCanvasGroup.DOFade(1, 0.5f).OnComplete(() =>
@@ -25,11 +42,6 @@ public class GameUI : UIGroup
             panelCanvasGroup.gameObject.SetActive(false);
         });
     }
-    public Button HomeBtn;
-    public Button OptionBtn;
-    public Button ArchiveBtn;
-    public Button BackpackBtn;
-   
 
     protected override void OnStart()
     {

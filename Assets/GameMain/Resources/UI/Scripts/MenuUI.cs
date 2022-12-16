@@ -51,7 +51,7 @@ public class MenuUI : UIGroup
     private void OnStartBtnClick()
     {
         SceneController.current_SceneID++;
-        Scheduler.current.SwitchSceneByDefault("SceneID_ 1");
+        SceneController.current.GoToScene("SceneID_ 1");
         UICenter.current.CloseUI<MenuUI>("MenuUI");
     }
 
@@ -61,8 +61,8 @@ public class MenuUI : UIGroup
     }
     private void OnOptionBtnClick()
     {
-        
-        UICenter.current.OpenUI<OptionUI>("OptionUI");
+
+        UIController.current.OnOptionBtnClick();
     }
 
 

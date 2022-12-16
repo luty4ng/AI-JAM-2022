@@ -8,17 +8,17 @@ public class MusicController : MonoSingletonBase<MusicController>
 {
 
     public AudioSource alarmBGM;
-    
+
+    protected override void OnAwake()
+    {
+        
+    }
+
     void Start()
     {
         //设置声音为循环播放 
         alarmBGM.loop = true;
     }
-    public void Awake()
-    {
-        DontDestroyOnLoad(this);
-    }
-
     
     void Update()
     {
@@ -27,10 +27,6 @@ public class MusicController : MonoSingletonBase<MusicController>
             alarmBGM.Play();
         if (Input.GetKeyDown(KeyCode.R))
             alarmBGM.Stop();
-
-        //声音是否正在播放
-        //if (alarmBGM.isPlaying)
-        //    print("音乐正在播放");
     }
 
     public void BGMstart()
@@ -40,6 +36,11 @@ public class MusicController : MonoSingletonBase<MusicController>
     public void BGMstop()
     {
         alarmBGM.Stop();
+    }
+
+    public void ChangeBGMSoundValue(float value)
+    {
+        alarmBGM.volume = value;
     }
 
 

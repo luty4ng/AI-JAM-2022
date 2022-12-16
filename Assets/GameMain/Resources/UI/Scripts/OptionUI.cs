@@ -12,31 +12,36 @@ public class OptionUI : UIGroup
 {
     public Button quitBtn;
     public Toggle bgmTog;
-
+    public Slider bgmValue;
 
     protected override void OnStart()
     {
         quitBtn.onClick.AddListener(OnQuitBtnClick);
         bgmTog.onValueChanged.AddListener(OnBgmTogChange);
-        
+        bgmValue.onValueChanged.AddListener(OnBgmValueChange);
+    }
+
+    private void OnBgmValueChange(float arg0)
+    {
+        MusicController.current.ChangeBGMSoundValue(arg0);
     }
 
     private void OnBgmTogChange(bool arg0)
     {
         if(arg0 == false)
         {
-            MusicController.current.BGMstop();
+            OnBgmValueChange(0f);
         }
         else
         {
-            MusicController.current.BGMstart();
+            OnBgmValueChange(0.1f);
         }
     }
 
     private void OnQuitBtnClick()
     {
-        UICenter.current.CloseUI<OptionUI>("OptionUI");
         
+        UIController.current.CloseOptionUI();
     }
 
     public override void Show(UnityAction callback = null)

@@ -11,11 +11,6 @@ public class UIController : MonoSingletonBase<UIController>
     OptionUI m_optionUI;
     MenuUI m_menuUI;
 
-    void Awake()
-    {
-        DontDestroyOnLoad(this.gameObject);
-    }
-
     private void Start()
     {
         
@@ -61,6 +56,7 @@ public class UIController : MonoSingletonBase<UIController>
     {
 
         m_optionUI = UICenter.current.OpenUI<OptionUI>("OptionUI");
+        
 
     }
 

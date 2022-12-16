@@ -12,10 +12,9 @@ public class SceneController: MonoSingletonBase<SceneController>
 
 
     public string LastScene;
-    public void Awake()
+    protected override void OnAwake()
     {
-        DontDestroyOnLoad(this);
-
+        base.OnAwake();
         if (LastScene == null) 
         {
             continueBtn.SetActive(false);
