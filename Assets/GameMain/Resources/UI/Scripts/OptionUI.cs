@@ -40,8 +40,8 @@ public class OptionUI : UIGroup
 
     private void OnQuitBtnClick()
     {
-        
-        UIController.current.CloseOptionUI();
+
+        UIController.current.OnOptionBtnClick();
     }
 
     public override void Show(UnityAction callback = null)

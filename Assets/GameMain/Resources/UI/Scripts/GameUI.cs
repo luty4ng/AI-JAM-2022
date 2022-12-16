@@ -63,16 +63,16 @@ public class GameUI : UIGroup
 
     private void OnArchiveBtnClick()
     {
-        UICenter.current.OpenUI("BackpackUI");
+        
     }
 
     private void OnBackpackBtnClick()
     {
-        UICenter.current.OpenUI("BackpackUI");
+        
     }
 
     private void OnOptionBtnClick()
     {
-        UICenter.current.OpenUI<OptionUI>("OptionUI");
+        UIController.current.OnOptionBtnClick();
     }
 }
