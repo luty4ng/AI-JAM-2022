@@ -13,10 +13,6 @@ public static class ScenesList
     public static void Assets_GameMain_Example_SceneExample_SceneC_unity() { ScenesUpdate.OpenScene("Assets/GameMain/Example/SceneExample/SceneC.unity"); }
     [MenuItem("Scenes/UIExample")]
     public static void Assets_GameMain_Example_UIExample_UIExample_unity() { ScenesUpdate.OpenScene("Assets/GameMain/Example/UIExample/UIExample.unity"); }
-    [MenuItem("Scenes/GameMenu")]
-    public static void Assets_GameMain_Scenes_GameMenu_unity() { ScenesUpdate.OpenScene("Assets/GameMain/Scenes/GameMenu.unity"); }
-    [MenuItem("Scenes/SceneID_ 0")]
-    public static void Assets_GameMain_Scenes_SceneID__0_unity() { ScenesUpdate.OpenScene("Assets/GameMain/Scenes/SceneID_ 0.unity"); }
     [MenuItem("Scenes/SceneID_ 1")]
     public static void Assets_GameMain_Scenes_SceneID__1_unity() { ScenesUpdate.OpenScene("Assets/GameMain/Scenes/SceneID_ 1.unity"); }
     [MenuItem("Scenes/SceneID_ 2")]
@@ -27,5 +23,7 @@ public static class ScenesList
     public static void Assets_GameMain_Scenes_SceneID__4_unity() { ScenesUpdate.OpenScene("Assets/GameMain/Scenes/SceneID_ 4.unity"); }
     [MenuItem("Scenes/SceneID_")]
     public static void Assets_GameMain_Scenes_SceneID__unity() { ScenesUpdate.OpenScene("Assets/GameMain/Scenes/SceneID_.unity"); }
+    [MenuItem("Scenes/SceneID_0")]
+    public static void Assets_GameMain_Scenes_SceneID_0_unity() { ScenesUpdate.OpenScene("Assets/GameMain/Scenes/SceneID_0.unity"); }
 }
 #endif

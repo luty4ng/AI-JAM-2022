@@ -15,8 +15,10 @@ using System;
 public class DialogSystem : MonoSingletonBase<DialogSystem>
 {
 
-    
-    public static int SceneID = 0; 
+   // [SerializeField]
+   // public static int Dialog_SceneID = 0;
+   // public  int Dialog_SceneID_cansee= Dialog_SceneID;
+
     public static bool IsActive = true;
     //对象池
     public CharacterPool characterPool;
@@ -58,12 +60,14 @@ public class DialogSystem : MonoSingletonBase<DialogSystem>
         dialogTree.Reset();
         //显示对话框ui
         uI_DialogSystem.Show();
-        //执行第一句对话
+        //执行对话
         ExcuteTextDisplay();
     }
 
     private void Update()
     {
+       
+
         if (IsActive == false || dialogTree == null)
             return;
 
@@ -77,6 +81,7 @@ public class DialogSystem : MonoSingletonBase<DialogSystem>
                 isInSelection = false;
                 //下一句对话根据选项改变
                 Node<Dialog> nextNode = GetNextNode(choiceIndex);
+
                 ExcuteTextDisplay();
                 //隐藏选项
                 uI_DialogSystem.HideResponse(() =>
@@ -130,7 +135,7 @@ public class DialogSystem : MonoSingletonBase<DialogSystem>
     //对话进行角色改变
     private void UpdateUI(Node<Dialog> node)
     {
-        // Debug.Log($"Update Character UI");
+        
         if (node == null || node.nodeEntity.speaker == "Default")
             return;
 
@@ -243,6 +248,9 @@ public class DialogSystem : MonoSingletonBase<DialogSystem>
     {
         Node<Dialog> nextNode = GetNextNode(index);
         ExcuteTextDisplay(nextNode);
+
+
+
         //每次执行更新人物画面
         if (uI_DialogSystem.uI_SpeakerPicLeft.overrideSprite!=currentCharacter.characterPic)
         {
@@ -269,14 +277,15 @@ public class DialogSystem : MonoSingletonBase<DialogSystem>
         uI_DialogSystem.Hide();
         isDialogEnd = true;
 
-        SceneID += 1;
-        if (SceneID < 4)
+        //进入下一场景
+        SceneController.current_SceneID ++;
+        if (SceneController.current_SceneID < 4)
         {
-            GoToNextScene("SceneID_ " + SceneID);
+            GoToNextScene("SceneID_ " + SceneController.current_SceneID);
         }
         else
         {
-            GoToNextScene("GameMenu");
+            GoToNextScene("SceneID_ 0");
         }
     }
 

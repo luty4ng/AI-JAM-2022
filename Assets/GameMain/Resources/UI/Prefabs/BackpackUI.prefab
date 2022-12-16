@@ -212,7 +212,6 @@ GameObject:
   - component: {fileID: 1549991483738196797}
   - component: {fileID: 6189913720710915851}
   - component: {fileID: 372555707530544387}
-  - component: {fileID: 3065119532286562621}
   m_Layer: 5
   m_Name: BackpackUI
   m_TagString: Untagged
@@ -290,16 +289,3 @@ CanvasGroup:
   m_Interactable: 1
   m_BlocksRaycasts: 1
   m_IgnoreParentGroups: 0
---- !u!114 &3065119532286562621
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8626451750570267389}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e8dd2dd9561e2044080e31505bfb2cd7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  quitBtn: {fileID: 3344124377540068382}

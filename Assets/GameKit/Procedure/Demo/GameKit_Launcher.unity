@@ -261,6 +261,14 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1428102773572698833, guid: 0d9804c5c560d1b458025b708648bb13, type: 3}
+      propertyPath: m_Pitch
+      value: 0.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 1428102773572698833, guid: 0d9804c5c560d1b458025b708648bb13, type: 3}
+      propertyPath: m_Volume
+      value: 0.469
+      objectReference: {fileID: 0}
     - target: {fileID: 2881170128602461766, guid: 0d9804c5c560d1b458025b708648bb13, type: 3}
       propertyPath: m_UiScaleMode
       value: 1
@@ -291,7 +299,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6796992112195693880, guid: 0d9804c5c560d1b458025b708648bb13, type: 3}
       propertyPath: m_SortingOrder
-      value: -1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 6796992112195693880, guid: 0d9804c5c560d1b458025b708648bb13, type: 3}
       propertyPath: m_SortingLayerID
