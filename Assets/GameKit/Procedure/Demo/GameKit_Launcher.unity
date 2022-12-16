@@ -285,6 +285,22 @@ PrefabInstance:
       propertyPath: m_ReferenceResolution.y
       value: 1080
       objectReference: {fileID: 0}
+    - target: {fileID: 3832723309906788879, guid: 0d9804c5c560d1b458025b708648bb13, type: 3}
+      propertyPath: dialogAssetList.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3832723309906788879, guid: 0d9804c5c560d1b458025b708648bb13, type: 3}
+      propertyPath: dialogAssetList.Array.data[0]
+      value: 
+      objectReference: {fileID: 11400000, guid: 5028a61df841a824f98e34729098257d, type: 2}
+    - target: {fileID: 3832723309906788879, guid: 0d9804c5c560d1b458025b708648bb13, type: 3}
+      propertyPath: dialogAssetList.Array.data[1]
+      value: 
+      objectReference: {fileID: 11400000, guid: 8b843a424ee0b124eabbcb96113c5de6, type: 2}
+    - target: {fileID: 3832723309906788879, guid: 0d9804c5c560d1b458025b708648bb13, type: 3}
+      propertyPath: dialogAssetList.Array.data[2]
+      value: 
+      objectReference: {fileID: 11400000, guid: 474465743af51c64aabde1536d237c75, type: 2}
     - target: {fileID: 4101275103425600622, guid: 0d9804c5c560d1b458025b708648bb13, type: 3}
       propertyPath: m_Depth
       value: 0
