@@ -154,6 +154,17 @@ public static class DialogPhaser
                     node.nodeEntity.ImmersiveIndicator = indicatorValue == "1" ? 1 : -1;
                 }
 
+                if (semantic == "backgroundChangeID")
+                {
+                    string indicatorValue = value.Trim().RemoveBracket();
+
+                    //将string类型改成int
+                    int temp = -1;
+                    int.TryParse(indicatorValue, out temp);
+                    node.nodeEntity.SceneToIndicator = temp;
+                    Debug.Log("从文本内容加载背景" + temp);
+                }
+
                 if (semantic == "sceneto")
                 {
                     string indicatorValue = value.Trim().RemoveBracket();

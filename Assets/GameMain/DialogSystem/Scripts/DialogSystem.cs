@@ -247,6 +247,7 @@ public class DialogSystem : MonoSingletonBase<DialogSystem>
             {
                 UnityAction func = PhaseAwakenAndImmersive;
                 func += PhaseSceneTo;
+                func += PhaseBackgroundChange;
                 PhaseNode(nextNode, func);
             }
         }
@@ -275,6 +276,13 @@ public class DialogSystem : MonoSingletonBase<DialogSystem>
             EventManager.instance.EventTrigger<int>(EventSettings.SCENE_TO, m_CachedDialogNodeEntity.SceneToIndicator);
     }
 
+    private void PhaseBackgroundChange()
+    {
+        if (m_CachedDialogNodeEntity == null)
+            return;
+        if (m_CachedDialogNodeEntity.SceneToIndicator != -1)
+            EventManager.instance.EventTrigger<int>(EventSettings.BACKGROUND_CHANGE, m_CachedDialogNodeEntity.BackgroundChangeID);
+    }
 
     private void PhaseAwakenAndImmersive()
     {

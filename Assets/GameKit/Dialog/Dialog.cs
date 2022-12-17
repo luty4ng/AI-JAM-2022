@@ -22,9 +22,11 @@ public sealed class Dialog : NodeType
     public bool IsCompleter = false;
 
     public int AwakenIndicator = 0;
-
+    public int AwakenValue = 0;
     public int ImmersiveIndicator = 0;
+    public int ImmersiveValue = 0;
 
+    public int BackgroundChangeID = -1;
     public int SceneToIndicator = -1;
 
     public List<string> completeConditons;

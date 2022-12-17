@@ -3,9 +3,14 @@ using System.Collections.Generic;
 using UnityEngine;
 using GameKit;
 using UnityEngine.UI;
+using DG.Tweening;
+using System;
 
 public class UIController : MonoSingletonBase<UIController>
 {
+
+    public List<Image> BackGroundList;
+    public int current_BackgroundID=-1;
     UIExample_Panel m_CachedUIExample;
 
     OptionUI m_optionUI;
@@ -31,9 +36,20 @@ public class UIController : MonoSingletonBase<UIController>
 
     private void Start()
     {
+        EventManager.instance.AddEventListener<int>(EventSettings.BACKGROUND_CHANGE, BackGroundChangeID);
         UICenter.current.OpenUI<MenuUI>("MenuUI");
     }
 
+    public void BackGroundChangeID(int background_ID)
+    {
+        Debug.Log(background_ID);
+        if (current_BackgroundID!=-1)
+        {
+              BackGroundList[current_BackgroundID].gameObject.SetActive(false);
+        }
+        BackGroundList[background_ID].gameObject.SetActive(true);
+        current_BackgroundID = background_ID;
+    }
 
     public void OpenOrCloseGameUI()
     {
@@ -114,5 +130,14 @@ public class UIController : MonoSingletonBase<UIController>
             UICenter.current.CloseUI<T>(uiName);
             ui_open = false;
         }
+    }
+
+
+
+    //第几张图片去掉
+    public void ChangeBackGround(int num)
+    {
+        BackGroundList[num].DOFade(1, 0.5f);
+
     }
 }
