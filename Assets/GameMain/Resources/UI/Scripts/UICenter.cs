@@ -85,5 +85,23 @@ public class UICenter : MonoSingletonBase<UICenter>
             return uiInstance;
         }
     }
+    public T OpenOrCloseUI<T>(string name) where T : UIGroup
+    {
+        if (UIManager.instance.HasUI<T>(name))
+        {
+            T ui = UIManager.instance.GetUI<T>(name);
+            ui.Show();
+            ui.GetComponent<CanvasGroup>().interactable = true;
+            return ui;
+        }
+        else
+        {
+            T ui = ResourceManager.instance.Load<T>(AssetPath + name);
+            T uiInstance = Instantiate<T>(ui, Vector3.zero, Quaternion.identity, UI_Instances);
+            uiInstance.gameObject.name = uiInstance.idName = name;
+            uiInstance.OnInstantiate();
+            return uiInstance;
+        }
+    }
 
 }

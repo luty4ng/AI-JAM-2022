@@ -14,6 +14,10 @@ public class UIController : MonoSingletonBase<UIController>
 
     MenuUI m_menuUI;
 
+    ArchiveUI m_archiveUI;
+    bool archiveOpen=false;
+
+
     private void Update()
     {
 
@@ -30,7 +34,16 @@ public class UIController : MonoSingletonBase<UIController>
     }
     public void OnArchiveBtnClick()
     {
-
+        if (!archiveOpen)
+        {
+            m_archiveUI = UICenter.current.OpenUI<ArchiveUI>("ArchiveUI");
+            archiveOpen = true;
+        }
+        else
+        {
+            UICenter.current.CloseUI<ArchiveUI>(m_archiveUI.idName);
+            archiveOpen = false;
+        }
 
     }
 
@@ -41,6 +54,7 @@ public class UIController : MonoSingletonBase<UIController>
 
     public void OnOptionBtnClick()
     {
+        //OpenOrCloseUI<OptionUI>(optionOpen, "OptionUI");
         if (!optionOpen)
         {
             m_optionUI = UICenter.current.OpenUI<OptionUI>("OptionUI");
@@ -51,18 +65,28 @@ public class UIController : MonoSingletonBase<UIController>
             UICenter.current.CloseUI<OptionUI>(m_optionUI.idName);
             optionOpen = false;
         }
-        
+
 
     }
 
-    public void CloseOptionUI()
-    {
-        UICenter.current.CloseUI<OptionUI>(m_optionUI.idName);
-    }
 
     public void OnHomeBtnClick()
     {
         SceneController.current.BackToMenu();
     }
 
+    public void OpenOrCloseUI<T>(bool ui_open,string uiName)where T:UIGroup
+    {
+        
+        if (!ui_open)
+        {
+            UICenter.current.OpenUI<T>(uiName);
+            ui_open = true;
+        }
+        else
+        {
+            UICenter.current.CloseUI<T>(uiName);
+            ui_open = false;
+        }
+    }
 }

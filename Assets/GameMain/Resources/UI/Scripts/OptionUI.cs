@@ -24,6 +24,14 @@ public class OptionUI : UIGroup
     private void OnBgmValueChange(float arg0)
     {
         MusicController.current.ChangeBGMSoundValue(arg0);
+        if (arg0<=0.01)
+        {
+            bgmTog.isOn = false;
+        }
+        else
+        {
+            bgmTog.isOn = true;
+        }
     }
 
     private void OnBgmTogChange(bool arg0)
