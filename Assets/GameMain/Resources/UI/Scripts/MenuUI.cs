@@ -53,6 +53,7 @@ public class MenuUI : UIGroup
         SceneController.current_SceneID++;
         ProcessController.current.currentProcess = ProcessController.Process.isGaming;
         SceneController.current.GoToSceneByID(1);
+        UICenter.current.OpenUI<GameUI>("GameUI");
         UICenter.current.CloseUI<MenuUI>("MenuUI");
     }
 

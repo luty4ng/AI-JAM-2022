@@ -20,20 +20,16 @@ public class UIController : MonoSingletonBase<UIController>
     BackpackUI m_backpackUI;
     bool backpackOpen=false;
 
-
-    private void Update()
+    protected override void OnAwake()
     {
+        base.OnAwake();
+        
 
-        if (ProcessController.current.currentProcess==ProcessController.Process.isMenu)
-        {
-            m_menuUI = UICenter.current.OpenUI<MenuUI>("MenuUI");
-            
-        }
-        else if(ProcessController.current.currentProcess == ProcessController.Process.isGaming)
-        {           
-            m_gameUI = UICenter.current.OpenUI<GameUI>("GameUI");
+    }
 
-        }
+    private void Start()
+    {
+        UICenter.current.OpenUI<MenuUI>("MenuUI");
     }
     public void OnArchiveBtnClick()
     {

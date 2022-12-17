@@ -23,6 +23,10 @@ public static class ScenesList
     public static void Assets_GameMain_Scenes_SceneID__3_unity() { ScenesUpdate.OpenScene("Assets/GameMain/Scenes/SceneID_ 3.unity"); }
     [MenuItem("Scenes/SceneID_ 4")]
     public static void Assets_GameMain_Scenes_SceneID__4_unity() { ScenesUpdate.OpenScene("Assets/GameMain/Scenes/SceneID_ 4.unity"); }
+    [MenuItem("Scenes/SceneID_ 5")]
+    public static void Assets_GameMain_Scenes_SceneID__5_unity() { ScenesUpdate.OpenScene("Assets/GameMain/Scenes/SceneID_ 5.unity"); }
+    [MenuItem("Scenes/SceneID_ 6")]
+    public static void Assets_GameMain_Scenes_SceneID__6_unity() { ScenesUpdate.OpenScene("Assets/GameMain/Scenes/SceneID_ 6.unity"); }
     [MenuItem("Scenes/SceneID_")]
     public static void Assets_GameMain_Scenes_SceneID__unity() { ScenesUpdate.OpenScene("Assets/GameMain/Scenes/SceneID_.unity"); }
 }
