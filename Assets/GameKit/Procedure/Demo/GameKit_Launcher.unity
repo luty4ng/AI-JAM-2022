@@ -206,19 +206,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1401312223 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7985697166927303033, guid: 0d9804c5c560d1b458025b708648bb13, type: 3}
-  m_PrefabInstance: {fileID: 580546840266179695}
-  m_PrefabAsset: {fileID: 0}
---- !u!222 &1401312226
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1401312223}
-  m_CullTransparentMesh: 1
 --- !u!1001 &580546840266179695
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -304,6 +291,10 @@ PrefabInstance:
       objectReference: {fileID: 880437053}
     - target: {fileID: 2848274156238742567, guid: 0d9804c5c560d1b458025b708648bb13, type: 3}
       propertyPath: m_RenderMode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2848274156238742567, guid: 0d9804c5c560d1b458025b708648bb13, type: 3}
+      propertyPath: m_SortingOrder
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2881170128602461766, guid: 0d9804c5c560d1b458025b708648bb13, type: 3}
@@ -323,13 +314,21 @@ PrefabInstance:
       value: "\u6309space\u8FDB\u884C\u5BF9\u8BDD"
       objectReference: {fileID: 0}
     - target: {fileID: 3832723309906788879, guid: 0d9804c5c560d1b458025b708648bb13, type: 3}
+      propertyPath: SoberEnding
+      value: 
+      objectReference: {fileID: 11400000, guid: 52f4cdd99c0f72742ac079814e7eec29, type: 2}
+    - target: {fileID: 3832723309906788879, guid: 0d9804c5c560d1b458025b708648bb13, type: 3}
+      propertyPath: ImmerseEnding
+      value: 
+      objectReference: {fileID: 11400000, guid: 72917b7e94e799041bd808688be847ba, type: 2}
+    - target: {fileID: 3832723309906788879, guid: 0d9804c5c560d1b458025b708648bb13, type: 3}
       propertyPath: dialogAssetList.Array.size
       value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 3832723309906788879, guid: 0d9804c5c560d1b458025b708648bb13, type: 3}
       propertyPath: dialogAssetList.Array.data[0]
       value: 
-      objectReference: {fileID: 11400000, guid: 61ddb1ca46c7159499caf7ce6c759a4f, type: 2}
+      objectReference: {fileID: 11400000, guid: 183cd15b374a27640845fd12e172886a, type: 2}
     - target: {fileID: 3832723309906788879, guid: 0d9804c5c560d1b458025b708648bb13, type: 3}
       propertyPath: dialogAssetList.Array.data[1]
       value: 

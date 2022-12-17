@@ -21,7 +21,9 @@ public class SceneController: MonoSingletonBase<SceneController>
         {
             continueBtn.SetActive(false);
         }
-        //EventManager.instance.AddEventListener<int>(EventSettings.SCENE_TO, GoToSceneByID);
+
+        //这里有个bug是会每次按按钮 都默认去往id =0的场景？
+        EventManager.instance.AddEventListener<int>(EventSettings.SCENE_TO, GoToSceneByID);
     }
 
 
