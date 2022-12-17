@@ -21,8 +21,11 @@ public class SceneController: MonoSingletonBase<SceneController>
         {
             continueBtn.SetActive(false);
         }
+        //EventManager.instance.AddEventListener<int>(EventSettings.SCENE_TO, GoToSceneByID);
     }
 
+
+    
     public void Update()
     {
         current_SceneID_cansee = current_SceneID;
@@ -53,7 +56,7 @@ public class SceneController: MonoSingletonBase<SceneController>
         
         ProcessController.current.currentProcess = ProcessController.Process.isMenu;
         current_SceneID = 0;
-        GoToSceneByID(1);
+        GoToSceneByID(0);
         UICenter.current.CloseUI<GameUI>("GameUI");
         UICenter.current.OpenUI<MenuUI>("MenuUI");
     }

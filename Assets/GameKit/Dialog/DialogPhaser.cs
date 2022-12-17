@@ -157,7 +157,12 @@ public static class DialogPhaser
                 if (semantic == "sceneto")
                 {
                     string indicatorValue = value.Trim().RemoveBracket();
-                    node.nodeEntity.SceneToIndicator = indicatorValue == "1" ? 1 : -1;
+
+                    //将string类型改成int
+                    int temp = -1;
+                    int.TryParse(indicatorValue, out temp);
+                    node.nodeEntity.SceneToIndicator =temp;
+                    Debug.Log("从文本内容加载场景"+temp);
                 }
 
                 if (semantic == "cdivider")

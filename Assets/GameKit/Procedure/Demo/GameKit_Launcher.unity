@@ -310,21 +310,29 @@ PrefabInstance:
       value: "\u6309space\u8FDB\u884C\u5BF9\u8BDD"
       objectReference: {fileID: 0}
     - target: {fileID: 3832723309906788879, guid: 0d9804c5c560d1b458025b708648bb13, type: 3}
+      propertyPath: SoberEnding
+      value: 
+      objectReference: {fileID: 11400000, guid: 52f4cdd99c0f72742ac079814e7eec29, type: 2}
+    - target: {fileID: 3832723309906788879, guid: 0d9804c5c560d1b458025b708648bb13, type: 3}
+      propertyPath: ImmerseEnding
+      value: 
+      objectReference: {fileID: 11400000, guid: 72917b7e94e799041bd808688be847ba, type: 2}
+    - target: {fileID: 3832723309906788879, guid: 0d9804c5c560d1b458025b708648bb13, type: 3}
       propertyPath: dialogAssetList.Array.size
       value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 3832723309906788879, guid: 0d9804c5c560d1b458025b708648bb13, type: 3}
       propertyPath: dialogAssetList.Array.data[0]
       value: 
-      objectReference: {fileID: 11400000, guid: 601475e114b86b44997788306e63c027, type: 2}
+      objectReference: {fileID: 11400000, guid: 183cd15b374a27640845fd12e172886a, type: 2}
     - target: {fileID: 3832723309906788879, guid: 0d9804c5c560d1b458025b708648bb13, type: 3}
       propertyPath: dialogAssetList.Array.data[1]
       value: 
-      objectReference: {fileID: 11400000, guid: 72917b7e94e799041bd808688be847ba, type: 2}
+      objectReference: {fileID: 11400000, guid: 460d791d0a388114e8e46e447e105ff4, type: 2}
     - target: {fileID: 3832723309906788879, guid: 0d9804c5c560d1b458025b708648bb13, type: 3}
       propertyPath: dialogAssetList.Array.data[2]
       value: 
-      objectReference: {fileID: 11400000, guid: df45ea424dc617b449dd63ba72f39d4d, type: 2}
+      objectReference: {fileID: 11400000, guid: 72917b7e94e799041bd808688be847ba, type: 2}
     - target: {fileID: 3832723309906788879, guid: 0d9804c5c560d1b458025b708648bb13, type: 3}
       propertyPath: dialogAssetList.Array.data[3]
       value: 
@@ -332,7 +340,7 @@ PrefabInstance:
     - target: {fileID: 3832723309906788879, guid: 0d9804c5c560d1b458025b708648bb13, type: 3}
       propertyPath: dialogAssetList.Array.data[4]
       value: 
-      objectReference: {fileID: 11400000, guid: bf71628fccb79f14999fd90f79345933, type: 2}
+      objectReference: {fileID: 11400000, guid: df45ea424dc617b449dd63ba72f39d4d, type: 2}
     - target: {fileID: 3832723309906788879, guid: 0d9804c5c560d1b458025b708648bb13, type: 3}
       propertyPath: dialogAssetList.Array.data[5]
       value: 
