@@ -291,10 +291,6 @@ PrefabInstance:
       objectReference: {fileID: 880437053}
     - target: {fileID: 2848274156238742567, guid: 0d9804c5c560d1b458025b708648bb13, type: 3}
       propertyPath: m_RenderMode
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2848274156238742567, guid: 0d9804c5c560d1b458025b708648bb13, type: 3}
-      propertyPath: m_SortingOrder
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2881170128602461766, guid: 0d9804c5c560d1b458025b708648bb13, type: 3}
@@ -316,11 +312,11 @@ PrefabInstance:
     - target: {fileID: 3832723309906788879, guid: 0d9804c5c560d1b458025b708648bb13, type: 3}
       propertyPath: SoberEnding
       value: 
-      objectReference: {fileID: 11400000, guid: 52f4cdd99c0f72742ac079814e7eec29, type: 2}
+      objectReference: {fileID: 11400000, guid: 183cd15b374a27640845fd12e172886a, type: 2}
     - target: {fileID: 3832723309906788879, guid: 0d9804c5c560d1b458025b708648bb13, type: 3}
       propertyPath: ImmerseEnding
       value: 
-      objectReference: {fileID: 11400000, guid: 72917b7e94e799041bd808688be847ba, type: 2}
+      objectReference: {fileID: 11400000, guid: 027aab9fa0893be43bc3d4bba3c51346, type: 2}
     - target: {fileID: 3832723309906788879, guid: 0d9804c5c560d1b458025b708648bb13, type: 3}
       propertyPath: dialogAssetList.Array.size
       value: 9
@@ -328,7 +324,7 @@ PrefabInstance:
     - target: {fileID: 3832723309906788879, guid: 0d9804c5c560d1b458025b708648bb13, type: 3}
       propertyPath: dialogAssetList.Array.data[0]
       value: 
-      objectReference: {fileID: 11400000, guid: 183cd15b374a27640845fd12e172886a, type: 2}
+      objectReference: {fileID: 11400000, guid: 61ddb1ca46c7159499caf7ce6c759a4f, type: 2}
     - target: {fileID: 3832723309906788879, guid: 0d9804c5c560d1b458025b708648bb13, type: 3}
       propertyPath: dialogAssetList.Array.data[1]
       value: 

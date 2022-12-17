@@ -10,6 +10,10 @@ public class Gameplay : MonoBehaviour
         EventManager.instance.AddEventListener<int>(EventSettings.AWAKEN_CHANGE, OnAwakenChange);
 
         EventManager.instance.AddEventListener<int>(EventSettings.IMMERSIVE_CHANGE, OnImmersiveChange);
+        EventManager.instance.AddEventListener<int>(EventSettings.SCENE_TO, (int i) =>
+        {
+            Debug.Log(this.gameObject.name);
+        });
     }
 
     private void OnImmersiveChange(int immersiveChange)
@@ -17,7 +21,7 @@ public class Gameplay : MonoBehaviour
         // 在这里写Immersive值变化的处理
         if (immersiveChange == 0)
             return;
-        
+
         Debug.Log(string.Format("Immersive Value {0} {1}", immersiveChange == 1 ? "Increase" : "Decrease", unitImmersiveChange));
     }
 

@@ -437,7 +437,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f77135d1854256c4c8d4cd4adcda54c9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dialogAsset: {fileID: 11400000, guid: 183cd15b374a27640845fd12e172886a, type: 2}
+  dialogAsset: {fileID: 11400000, guid: 460d791d0a388114e8e46e447e105ff4, type: 2}
   Hint: {fileID: 1530749257}
 --- !u!1 &1030617390
 GameObject:
