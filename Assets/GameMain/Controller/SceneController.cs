@@ -21,7 +21,7 @@ public class SceneController : MonoSingletonBase<SceneController>
             continueBtn.SetActive(false);
         }
         EventManager.instance.AddEventListener<int>(EventSettings.SCENE_TO, GoToSceneByID);
-        EventManager.instance.AddEventListener(EventSettings.DIALOG_END, GoToNextScene);
+        
     }
 
     //进入下一场景
@@ -29,6 +29,7 @@ public class SceneController : MonoSingletonBase<SceneController>
     {
         current_SceneID++;
         GoToSceneByID(current_SceneID);
+        
             
     }
 
@@ -39,7 +40,7 @@ public class SceneController : MonoSingletonBase<SceneController>
     public void GoToSceneByID(int sceneID)
     {
         current_SceneID = sceneID;
-
+        DialogController.current.StartCurrentDialog();
         Scheduler.current.SwitchSceneByDefault("SceneID_ " + sceneID.ToString());
     }
     public void GoToScene(string name)

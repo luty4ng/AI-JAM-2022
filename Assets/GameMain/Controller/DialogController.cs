@@ -12,9 +12,8 @@ public class DialogController: MonoSingletonBase<DialogController>
    
     public List<DialogAsset> dialogAssetList = new List<DialogAsset>();
 
-
-    public DialogAsset ImmerseEnding;
-    public DialogAsset SoberEnding;
+    public int SceneID_ImmerseEnding;
+    public int SceneID_SoberEnding;
 
     private void Update()
     {
@@ -22,17 +21,30 @@ public class DialogController: MonoSingletonBase<DialogController>
 
         if (Input.GetKeyDown(KeyCode.A))
         {
-            DialogSystem.current.StartDialog(dialogAssetList[SceneController.current_SceneID-1].title, dialogAssetList[SceneController.current_SceneID - 1].contents);
+            StartCurrentDialog();
         }
 
     }
+    public void Start()
+    {
+        StartCurrentDialog();
+    }
 
+
+    public void StartCurrentDialog()
+    {
+        if (SceneController.current_SceneID!=0)
+        {
+            DialogSystem.current.StartDialog(dialogAssetList[SceneController.current_SceneID].title, dialogAssetList[SceneController.current_SceneID].contents);
+        }
+    }
+      
     public void GoImmerse()
     {
-        DialogSystem.current.StartDialog(ImmerseEnding.title, ImmerseEnding.contents);
+        DialogSystem.current.StartDialog(dialogAssetList[SceneID_ImmerseEnding].title, dialogAssetList[SceneID_ImmerseEnding].contents);   
     }
     public void GoAwake()
     {
-        DialogSystem.current.StartDialog(SoberEnding.title, SoberEnding.contents);
+        DialogSystem.current.StartDialog(dialogAssetList[SceneID_SoberEnding].title, dialogAssetList[SceneID_SoberEnding].contents);
     }
 }

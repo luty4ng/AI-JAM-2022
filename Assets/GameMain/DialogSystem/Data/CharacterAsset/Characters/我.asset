@@ -15,6 +15,6 @@ MonoBehaviour:
   idName: 
   displayName: "\u6211"
   iconicColor: {r: 0, g: 0, b: 0, a: 0}
-  characterPic: {fileID: 0}
+  characterPic: {fileID: 21300000, guid: 856b5f041a9c5144e975bf53fb9dbe3a, type: 3}
   introduction: 
   moods: []

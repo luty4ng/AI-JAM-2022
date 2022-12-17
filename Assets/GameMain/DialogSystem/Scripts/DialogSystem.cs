@@ -315,14 +315,6 @@ public class DialogSystem : MonoSingletonBase<DialogSystem>
         EventManager.instance.EventTrigger(EventSettings.DIALOG_END);
     }
 
-    public void GoToNextScene(string name)
-    {
-        Scheduler.current.SwitchSceneByDefault(name, () =>
-        {
-            Debug.Log(string.Format("场景{0}切换完毕", name));
-        });
-    }
-
     private RuntimeAnimatorController FindAnimator(string name)
     {
         for (int i = 0; i < charaAnimators.Count; i++)
