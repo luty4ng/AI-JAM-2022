@@ -10,11 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f3d0ed17694105c43adcd00298bee7e5, type: 3}
-  m_Name: "\u65C1\u767D"
+  m_Name: "JK\u7F8E\u5C11\u5973"
   m_EditorClassIdentifier: 
-  idName: "\u65C1\u767D"
-  displayName: "\u65C1\u767D"
-  iconicColor: {r: 0, g: 0, b: 0, a: 0}
-  characterPic: {fileID: 21300000, guid: ede0415f2fe8d83429d37f986f3b5310, type: 3}
-  introduction: 
+  idName: "JK\u7F8E\u5C11\u5973"
+  displayName: "JK\u7F8E\u5C11\u5973"
+  iconicColor: {r: 0.15686275, g: 0.15686275, b: 0.15686275, a: 0}
+  characterPic: {fileID: 21300000, guid: dd6a4f1b48fdfa24795480dd2bce1661, type: 3}
+  introduction: "\u8FD9\u4E2A\u4EBA\u662Ftrojan"
   moods: []
