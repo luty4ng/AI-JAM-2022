@@ -3,14 +3,13 @@ using UnityEngine;
 public class UIExample_Tester : MonoBehaviour
 {
     UIExample_Panel m_CachedUIExample;
-    MenuUI menuUI;
 
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Z))
         {
             m_CachedUIExample = UICenter.current.OpenUI<UIExample_Panel>("ExampleUI");
-            menuUI = UICenter.current.OpenUI<MenuUI>("MenuUI");
+         
         }
 
         // m_CachedUIExample... 其他操作

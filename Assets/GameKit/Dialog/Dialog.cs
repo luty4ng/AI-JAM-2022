@@ -31,7 +31,7 @@ public sealed class Dialog : NodeType
     /// <summary>
     /// 该节点会跳转的场景id
     /// </summary>
-    public int SceneToIndicator = 0;
+    public int SceneToIndicator;
 
     public List<string> completeConditons;
     public List<string> dividerConditions;

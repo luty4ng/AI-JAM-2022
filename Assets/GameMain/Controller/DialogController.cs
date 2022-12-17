@@ -13,7 +13,8 @@ public class DialogController: MonoSingletonBase<DialogController>
     public List<DialogAsset> dialogAssetList = new List<DialogAsset>();
 
 
-
+    public DialogAsset ImmerseEnding;
+    public DialogAsset SoberEnding;
 
     private void Update()
     {
@@ -26,6 +27,12 @@ public class DialogController: MonoSingletonBase<DialogController>
 
     }
 
-
-
+    public void GoImmerse()
+    {
+        DialogSystem.current.StartDialog(ImmerseEnding.title, ImmerseEnding.contents);
+    }
+    public void GoAwake()
+    {
+        DialogSystem.current.StartDialog(SoberEnding.title, SoberEnding.contents);
+    }
 }

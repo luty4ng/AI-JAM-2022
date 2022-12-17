@@ -78,12 +78,15 @@ public class DialogSystem : MonoSingletonBase<DialogSystem>
             if (Input.GetKeyDown(KeyCode.Space))
             {
                 int choiceIndex = uI_DialogSystem.GetSelection();
+
                 //选择状态取消
                 isInSelection = false;
+
                 //下一句对话根据选项改变
                 Node<Dialog> nextNode = GetNextNode(choiceIndex);
 
                 ExcuteTextDisplay();
+
                 //隐藏选项
                 uI_DialogSystem.HideResponse(() =>
                 {
@@ -242,6 +245,7 @@ public class DialogSystem : MonoSingletonBase<DialogSystem>
             else
             {
                 PhaseNode(nextNode, PhaseAwakenAndImmersive);
+                PhaseNode(nextNode, PhaseSceneTo);
             }
         }
     }
@@ -261,12 +265,21 @@ public class DialogSystem : MonoSingletonBase<DialogSystem>
         }
     }
 
+    private void PhaseSceneTo()
+    {
+        if (m_CachedDialogNodeEntity == null)
+            return;
+        EventManager.instance.EventTrigger<int>(EventSettings.SCENE_TO, m_CachedDialogNodeEntity.SceneToIndicator);
+        
+    }
+
+
     private void PhaseAwakenAndImmersive()
     {
         if (m_CachedDialogNodeEntity == null)
             return;
-        EventManager.instance.EventTrigger<int>(EventSettings.AWAKEN_CHANGE, m_CachedDialogNodeEntity.AwakenIndicator*10);
-        EventManager.instance.EventTrigger<int>(EventSettings.IMMERSIVE_CHANGE, m_CachedDialogNodeEntity.ImmersiveIndicator*10);
+        EventManager.instance.EventTrigger<int>(EventSettings.AWAKEN_CHANGE, m_CachedDialogNodeEntity.AwakenIndicator);
+        EventManager.instance.EventTrigger<int>(EventSettings.IMMERSIVE_CHANGE, m_CachedDialogNodeEntity.ImmersiveIndicator);
     }
 
 

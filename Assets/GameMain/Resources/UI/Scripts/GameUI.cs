@@ -31,6 +31,7 @@ public class GameUI : UIGroup
         {
             SceneController.current.GoToSceneByID(5);
             ProcessController.current.currentProcess = ProcessController.Process.isEnd;
+            DialogController.current.GoImmerse();
         }
     }
     public void SoberAdd(int addNum)
@@ -41,6 +42,7 @@ public class GameUI : UIGroup
         {
             SceneController.current.GoToSceneByID(6);
             ProcessController.current.currentProcess = ProcessController.Process.isEnd;
+            DialogController.current.GoAwake();
         }
     }
 
