@@ -27,7 +27,7 @@ public class GameUI : UIGroup
     {
         addNum *= 10;
         m_immerseValue.DOValue(m_immerseValue.value+addNum, 1f);
-        if (m_immerseValue.value > limitValue)
+        if (m_immerseValue.value > limitValue&&SceneController.current_SceneID!=5)
         {
             SceneController.current.GoToSceneByID(5);
             ProcessController.current.currentProcess = ProcessController.Process.isEnd;
@@ -38,7 +38,7 @@ public class GameUI : UIGroup
     {
         addNum *= 10;
         m_soberValue.DOValue(m_soberValue.value + addNum, 1f);
-        if (m_soberValue.value > limitValue)
+        if (m_soberValue.value > limitValue && SceneController.current_SceneID != 6)
         {
             SceneController.current.GoToSceneByID(6);
             ProcessController.current.currentProcess = ProcessController.Process.isEnd;
