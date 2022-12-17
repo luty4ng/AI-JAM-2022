@@ -15,6 +15,8 @@ public class ProcessController : MonoSingletonBase<ProcessController>
     {
         currentProcess= Process.isMenu;
     }
+
+
   
 
 }

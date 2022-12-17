@@ -17,6 +17,7 @@ public class Gameplay : MonoBehaviour
         // 在这里写Immersive值变化的处理
         if (immersiveChange == 0)
             return;
+        
         Debug.Log(string.Format("Immersive Value {0} {1}", immersiveChange == 1 ? "Increase" : "Decrease", unitImmersiveChange));
     }
 

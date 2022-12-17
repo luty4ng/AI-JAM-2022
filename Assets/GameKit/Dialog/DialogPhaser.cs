@@ -19,8 +19,11 @@ public static class DialogPhaser
         "mood",
         "cdivider",
         "ccomplete",
+        //沉浸值醒梦值
         "awaken",
         "immersive",
+        //跳转场景
+        "sceneto"
     };
     public static List<string> prioritizedSemantics = new List<string>() // 该语法集合不会自动上链
     {
@@ -149,6 +152,12 @@ public static class DialogPhaser
                 {
                     string indicatorValue = value.Trim().RemoveBracket();
                     node.nodeEntity.ImmersiveIndicator = indicatorValue == "1" ? 1 : -1;
+                }
+                
+                if (semantic == "sceneto")
+                {
+                    string indicatorValue = value.Trim().RemoveBracket();
+                    node.nodeEntity.SceneToIndicator = indicatorValue == "1" ? 1 : -1;
                 }
 
                 if (semantic == "cdivider")

@@ -199,6 +199,8 @@ public class DialogSystem : MonoSingletonBase<DialogSystem>
 
         m_CachedDialogNodeEntity = nextNode.nodeEntity;
         isDialogEnd = false;
+
+        //
         if (nextNode.nodeEntity.IsFunctional)
         {
             if (nextNode.nodeEntity.IsCompleter)
@@ -263,8 +265,8 @@ public class DialogSystem : MonoSingletonBase<DialogSystem>
     {
         if (m_CachedDialogNodeEntity == null)
             return;
-        EventManager.instance.EventTrigger<int>(EventSettings.AWAKEN_CHANGE, m_CachedDialogNodeEntity.AwakenIndicator);
-        EventManager.instance.EventTrigger<int>(EventSettings.IMMERSIVE_CHANGE, m_CachedDialogNodeEntity.ImmersiveIndicator);
+        EventManager.instance.EventTrigger<int>(EventSettings.AWAKEN_CHANGE, m_CachedDialogNodeEntity.AwakenIndicator*10);
+        EventManager.instance.EventTrigger<int>(EventSettings.IMMERSIVE_CHANGE, m_CachedDialogNodeEntity.ImmersiveIndicator*10);
     }
 
 

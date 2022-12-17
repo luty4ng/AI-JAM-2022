@@ -22,8 +22,10 @@ public class GameUI : UIGroup
     public Slider m_immerseValue;
     public Slider m_soberValue;
 
+
     public void ImmerseAdd(int addNum)
     {
+        addNum *= 10;
         m_immerseValue.DOValue(m_immerseValue.value+addNum, 1f);
         if (m_immerseValue.value > limitValue)
         {
@@ -33,6 +35,7 @@ public class GameUI : UIGroup
     }
     public void SoberAdd(int addNum)
     {
+        addNum *= 10;
         m_soberValue.DOValue(m_soberValue.value + addNum, 1f);
         if (m_soberValue.value > limitValue)
         {
@@ -64,6 +67,9 @@ public class GameUI : UIGroup
         OptionBtn.onClick.AddListener(OnOptionBtnClick);
         BackpackBtn.onClick.AddListener(OnBackpackBtnClick);
         ArchiveBtn.onClick.AddListener(OnArchiveBtnClick);
+
+        EventManager.instance.AddEventListener<int>(EventSettings.AWAKEN_CHANGE, SoberAdd);
+        EventManager.instance.AddEventListener<int>(EventSettings.IMMERSIVE_CHANGE, ImmerseAdd);
     }
 
     private void OnHomeBtnClick()

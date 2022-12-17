@@ -36,6 +36,12 @@ EditorBuildSettings:
     path: Assets/GameMain/Scenes/SceneID_ 4.unity
     guid: fb20a5041df7473419ace0dad81cc7ad
   - enabled: 1
+    path: Assets/GameMain/Scenes/SceneID_ 5.unity
+    guid: c15fdc673a139c24ea27a3537b9aa374
+  - enabled: 1
+    path: Assets/GameMain/Scenes/SceneID_ 6.unity
+    guid: 1b35c73ac50d4a043bd19455ae748e90
+  - enabled: 1
     path: Assets/GameMain/Scenes/SceneID_.unity
     guid: d2a45dc14e88e0740a842988580f6105
   m_configObjects: {}

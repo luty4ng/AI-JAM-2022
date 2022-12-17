@@ -20,8 +20,19 @@ public sealed class Dialog : NodeType
     public bool IsFunctional = false;
     public bool IsDivider = false;
     public bool IsCompleter = false;
+    /// <summary>
+    /// 该节点需要增加的清醒数值
+    /// </summary>
     public int AwakenIndicator = 0;
+    /// <summary>
+    /// 该节点需要增加的沉浸数值
+    /// </summary>
     public int ImmersiveIndicator = 0;
+    /// <summary>
+    /// 该节点会跳转的场景id
+    /// </summary>
+    public int SceneToIndicator = 0;
+
     public List<string> completeConditons;
     public List<string> dividerConditions;
 

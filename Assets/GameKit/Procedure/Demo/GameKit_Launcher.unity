@@ -311,20 +311,52 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3832723309906788879, guid: 0d9804c5c560d1b458025b708648bb13, type: 3}
       propertyPath: dialogAssetList.Array.size
-      value: 3
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 3832723309906788879, guid: 0d9804c5c560d1b458025b708648bb13, type: 3}
       propertyPath: dialogAssetList.Array.data[0]
       value: 
-      objectReference: {fileID: 11400000, guid: df45ea424dc617b449dd63ba72f39d4d, type: 2}
+      objectReference: {fileID: 11400000, guid: 183cd15b374a27640845fd12e172886a, type: 2}
     - target: {fileID: 3832723309906788879, guid: 0d9804c5c560d1b458025b708648bb13, type: 3}
       propertyPath: dialogAssetList.Array.data[1]
       value: 
-      objectReference: {fileID: 11400000, guid: df45ea424dc617b449dd63ba72f39d4d, type: 2}
+      objectReference: {fileID: 11400000, guid: 72917b7e94e799041bd808688be847ba, type: 2}
     - target: {fileID: 3832723309906788879, guid: 0d9804c5c560d1b458025b708648bb13, type: 3}
       propertyPath: dialogAssetList.Array.data[2]
       value: 
+      objectReference: {fileID: 11400000, guid: df45ea424dc617b449dd63ba72f39d4d, type: 2}
+    - target: {fileID: 3832723309906788879, guid: 0d9804c5c560d1b458025b708648bb13, type: 3}
+      propertyPath: dialogAssetList.Array.data[3]
+      value: 
+      objectReference: {fileID: 11400000, guid: df45ea424dc617b449dd63ba72f39d4d, type: 2}
+    - target: {fileID: 3832723309906788879, guid: 0d9804c5c560d1b458025b708648bb13, type: 3}
+      propertyPath: dialogAssetList.Array.data[4]
+      value: 
+      objectReference: {fileID: 11400000, guid: bf71628fccb79f14999fd90f79345933, type: 2}
+    - target: {fileID: 3832723309906788879, guid: 0d9804c5c560d1b458025b708648bb13, type: 3}
+      propertyPath: dialogAssetList.Array.data[5]
+      value: 
+      objectReference: {fileID: 11400000, guid: 52f4cdd99c0f72742ac079814e7eec29, type: 2}
+    - target: {fileID: 3832723309906788879, guid: 0d9804c5c560d1b458025b708648bb13, type: 3}
+      propertyPath: dialogAssetList.Array.data[6]
+      value: 
       objectReference: {fileID: 11400000, guid: 72917b7e94e799041bd808688be847ba, type: 2}
+    - target: {fileID: 3832723309906788879, guid: 0d9804c5c560d1b458025b708648bb13, type: 3}
+      propertyPath: dialogAssetList.Array.data[7]
+      value: 
+      objectReference: {fileID: 11400000, guid: 8b843a424ee0b124eabbcb96113c5de6, type: 2}
+    - target: {fileID: 3832723309906788879, guid: 0d9804c5c560d1b458025b708648bb13, type: 3}
+      propertyPath: dialogAssetList.Array.data[8]
+      value: 
+      objectReference: {fileID: 11400000, guid: 5028a61df841a824f98e34729098257d, type: 2}
+    - target: {fileID: 3832723309906788879, guid: 0d9804c5c560d1b458025b708648bb13, type: 3}
+      propertyPath: dialogAssetList.Array.data[9]
+      value: 
+      objectReference: {fileID: 11400000, guid: 027aab9fa0893be43bc3d4bba3c51346, type: 2}
+    - target: {fileID: 3832723309906788879, guid: 0d9804c5c560d1b458025b708648bb13, type: 3}
+      propertyPath: dialogAssetList.Array.data[10]
+      value: 
+      objectReference: {fileID: 11400000, guid: 183cd15b374a27640845fd12e172886a, type: 2}
     - target: {fileID: 4101275103425600622, guid: 0d9804c5c560d1b458025b708648bb13, type: 3}
       propertyPath: m_Depth
       value: 0
@@ -336,6 +368,14 @@ PrefabInstance:
     - target: {fileID: 4101275103425600622, guid: 0d9804c5c560d1b458025b708648bb13, type: 3}
       propertyPath: m_CullingMask.m_Bits
       value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: 4578740022344269430, guid: 0d9804c5c560d1b458025b708648bb13, type: 3}
+      propertyPath: unitAwakenChange
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 4578740022344269430, guid: 0d9804c5c560d1b458025b708648bb13, type: 3}
+      propertyPath: unitImmersiveChange
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 5476609557719665274, guid: 0d9804c5c560d1b458025b708648bb13, type: 3}
       propertyPath: currentProcess
