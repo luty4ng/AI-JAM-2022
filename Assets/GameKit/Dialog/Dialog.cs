@@ -21,17 +21,17 @@ public sealed class Dialog : NodeType
     public bool IsDivider = false;
     public bool IsCompleter = false;
     /// <summary>
-    /// 该节点需要增加的清醒数值
+    /// 锟矫节碉拷锟斤拷要锟斤拷锟接碉拷锟斤拷锟斤拷锟斤拷值
     /// </summary>
     public int AwakenIndicator = 0;
     /// <summary>
-    /// 该节点需要增加的沉浸数值
+    /// 锟矫节碉拷锟斤拷要锟斤拷锟接的筹拷锟斤拷锟斤拷值
     /// </summary>
     public int ImmersiveIndicator = 0;
     /// <summary>
-    /// 该节点会跳转的场景id
+    /// 锟矫节碉拷锟斤拷锟阶拷某锟斤拷锟絠d
     /// </summary>
-    public int SceneToIndicator;
+    public int SceneToIndicator = -1;
 
     public List<string> completeConditons;
     public List<string> dividerConditions;

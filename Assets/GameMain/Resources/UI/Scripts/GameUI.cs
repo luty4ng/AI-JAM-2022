@@ -29,7 +29,7 @@ public class GameUI : UIGroup
         m_immerseValue.DOValue(m_immerseValue.value+addNum, 1f);
         if (m_immerseValue.value > limitValue&&SceneController.current_SceneID!=5)
         {
-            SceneController.current.GoToSceneByID(5);
+            // SceneController.current.GoToSceneByID(5);
             ProcessController.current.currentProcess = ProcessController.Process.isEnd;
             DialogController.current.GoImmerse();
         }
@@ -40,7 +40,7 @@ public class GameUI : UIGroup
         m_soberValue.DOValue(m_soberValue.value + addNum, 1f);
         if (m_soberValue.value > limitValue && SceneController.current_SceneID != 6)
         {
-            SceneController.current.GoToSceneByID(6);
+            // SceneController.current.GoToSceneByID(6);
             ProcessController.current.currentProcess = ProcessController.Process.isEnd;
             DialogController.current.GoAwake();
         }
@@ -93,5 +93,10 @@ public class GameUI : UIGroup
     private void OnOptionBtnClick()
     {
         UIController.current.OnOptionBtnClick();
+    }
+
+    public void Test()
+    {
+        Debug.Log(111);
     }
 }

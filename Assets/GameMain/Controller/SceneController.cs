@@ -3,13 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 using GameKit;
 
-public class SceneController: MonoSingletonBase<SceneController>
+public class SceneController : MonoSingletonBase<SceneController>
 {
     public GameObject continueBtn;
-    
+
     public static int current_SceneID = 0;
 
-    //Õâ¸ö±äÁ¿µÄÉèÖÃµ¥´¿ÊÇÎªÁËÔÚ±à¼­Æ÷ÀïÄÜ¿´µ½¾ßÌåÊý×Ö
+    //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ãµï¿½ï¿½ï¿½ï¿½ï¿½Îªï¿½ï¿½ï¿½Ú±à¼­ï¿½ï¿½ï¿½ï¿½ï¿½Ü¿ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
     public int current_SceneID_cansee = 0;
 
 
@@ -17,15 +17,15 @@ public class SceneController: MonoSingletonBase<SceneController>
     protected override void OnAwake()
     {
         base.OnAwake();
-        if (LastScene == null) 
+        if (LastScene == null)
         {
             continueBtn.SetActive(false);
         }
-        //EventManager.instance.AddEventListener<int>(EventSettings.SCENE_TO, GoToSceneByID);
+        EventManager.instance.AddEventListener<int>(EventSettings.SCENE_TO, GoToSceneByID);
     }
 
 
-    
+
     public void Update()
     {
         current_SceneID_cansee = current_SceneID;
@@ -33,27 +33,27 @@ public class SceneController: MonoSingletonBase<SceneController>
     public void GoToSceneByID(int sceneID)
     {
         current_SceneID = sceneID;
-        
-        Scheduler.current.SwitchSceneByDefault("SceneID_ "+sceneID.ToString(), () =>
+
+        Scheduler.current.SwitchSceneByDefault("SceneID_ " + sceneID.ToString(), () =>
         {
-            Debug.Log(string.Format("³¡¾°SceneID_ {0}ÇÐ»»Íê±Ï", sceneID));
+            Debug.Log(string.Format("ï¿½ï¿½ï¿½ï¿½SceneID_ {0}ï¿½Ð»ï¿½ï¿½ï¿½ï¿½", sceneID));
         });
     }
     public void GoToScene(string name)
     {
         Scheduler.current.SwitchSceneByDefault(name, () =>
         {
-            Debug.Log(string.Format("³¡¾°{0}ÇÐ»»Íê±Ï", name));
+            Debug.Log(string.Format("ï¿½ï¿½ï¿½ï¿½{0}ï¿½Ð»ï¿½ï¿½ï¿½ï¿½", name));
         });
     }
-    public void GoToLastScene() 
+    public void GoToLastScene()
     {
         Scheduler.current.SwitchSceneByDefault(LastScene);
     }
 
     public void BackToMenu()
     {
-        
+
         ProcessController.current.currentProcess = ProcessController.Process.isMenu;
         current_SceneID = 0;
         GoToSceneByID(0);

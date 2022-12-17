@@ -171,6 +171,7 @@ public class DialogSystem : MonoSingletonBase<DialogSystem>
         {
             isTextShowing = true;
         });
+        textAnimatorPlayer.onTextShowed.RemoveAllListeners();
         textAnimatorPlayer.onTextShowed.AddListener(() =>
         {
             isTextShowing = false;
@@ -244,8 +245,9 @@ public class DialogSystem : MonoSingletonBase<DialogSystem>
             }
             else
             {
-                PhaseNode(nextNode, PhaseAwakenAndImmersive);
-                PhaseNode(nextNode, PhaseSceneTo);
+                UnityAction func = PhaseAwakenAndImmersive;
+                func += PhaseSceneTo;
+                PhaseNode(nextNode, func);
             }
         }
     }
@@ -269,8 +271,8 @@ public class DialogSystem : MonoSingletonBase<DialogSystem>
     {
         if (m_CachedDialogNodeEntity == null)
             return;
-        EventManager.instance.EventTrigger<int>(EventSettings.SCENE_TO, m_CachedDialogNodeEntity.SceneToIndicator);
-        
+        if (m_CachedDialogNodeEntity.SceneToIndicator != -1)
+            EventManager.instance.EventTrigger<int>(EventSettings.SCENE_TO, m_CachedDialogNodeEntity.SceneToIndicator);
     }
 
 

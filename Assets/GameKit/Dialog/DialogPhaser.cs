@@ -153,7 +153,7 @@ public static class DialogPhaser
                     string indicatorValue = value.Trim().RemoveBracket();
                     node.nodeEntity.ImmersiveIndicator = indicatorValue == "1" ? 1 : -1;
                 }
-                
+
                 if (semantic == "sceneto")
                 {
                     string indicatorValue = value.Trim().RemoveBracket();
@@ -161,8 +161,8 @@ public static class DialogPhaser
                     //将string类型改成int
                     int temp = -1;
                     int.TryParse(indicatorValue, out temp);
-                    node.nodeEntity.SceneToIndicator =temp;
-                    Debug.Log("从文本内容加载场景"+temp);
+                    node.nodeEntity.SceneToIndicator = temp;
+                    Debug.Log("从文本内容加载场景" + temp);
                 }
 
                 if (semantic == "cdivider")
