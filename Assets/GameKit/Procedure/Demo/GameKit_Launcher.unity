@@ -206,6 +206,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1401312223 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7985697166927303033, guid: 0d9804c5c560d1b458025b708648bb13, type: 3}
+  m_PrefabInstance: {fileID: 580546840266179695}
+  m_PrefabAsset: {fileID: 0}
+--- !u!222 &1401312226
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1401312223}
+  m_CullTransparentMesh: 1
 --- !u!1001 &580546840266179695
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -316,11 +329,11 @@ PrefabInstance:
     - target: {fileID: 3832723309906788879, guid: 0d9804c5c560d1b458025b708648bb13, type: 3}
       propertyPath: dialogAssetList.Array.data[0]
       value: 
-      objectReference: {fileID: 11400000, guid: 601475e114b86b44997788306e63c027, type: 2}
+      objectReference: {fileID: 11400000, guid: 61ddb1ca46c7159499caf7ce6c759a4f, type: 2}
     - target: {fileID: 3832723309906788879, guid: 0d9804c5c560d1b458025b708648bb13, type: 3}
       propertyPath: dialogAssetList.Array.data[1]
       value: 
-      objectReference: {fileID: 11400000, guid: 72917b7e94e799041bd808688be847ba, type: 2}
+      objectReference: {fileID: 11400000, guid: df45ea424dc617b449dd63ba72f39d4d, type: 2}
     - target: {fileID: 3832723309906788879, guid: 0d9804c5c560d1b458025b708648bb13, type: 3}
       propertyPath: dialogAssetList.Array.data[2]
       value: 
@@ -405,6 +418,10 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 21300000, guid: 951352f31055aae46b6e9786313c632d, type: 3}
+    - target: {fileID: 7985697166927303033, guid: 0d9804c5c560d1b458025b708648bb13, type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8109101469647811417, guid: 0d9804c5c560d1b458025b708648bb13, type: 3}
       propertyPath: m_IsActive
       value: 1
