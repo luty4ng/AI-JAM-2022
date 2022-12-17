@@ -440,7 +440,7 @@ Canvas:
   m_GameObject: {fileID: 1616661805409565196}
   m_Enabled: 1
   serializedVersion: 3
-  m_RenderMode: 1
+  m_RenderMode: 0
   m_Camera: {fileID: 0}
   m_PlaneDistance: 10
   m_PixelPerfect: 0
@@ -577,7 +577,7 @@ CanvasGroup:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1768292047079859258}
   m_Enabled: 1
-  m_Alpha: 0
+  m_Alpha: 1
   m_Interactable: 1
   m_BlocksRaycasts: 1
   m_IgnoreParentGroups: 0
@@ -1664,7 +1664,7 @@ CanvasGroup:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3769825013664261853}
   m_Enabled: 1
-  m_Alpha: 0
+  m_Alpha: 1
   m_Interactable: 1
   m_BlocksRaycasts: 1
   m_IgnoreParentGroups: 0
@@ -3330,7 +3330,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f91bb8a3312cc93489a2d6e945a29aae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dialogAsset: {fileID: 0}
   dialogAssetList:
   - {fileID: 11400000, guid: bf71628fccb79f14999fd90f79345933, type: 2}
   - {fileID: 11400000, guid: 5028a61df841a824f98e34729098257d, type: 2}
@@ -3421,6 +3420,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3104611757801184677}
   - component: {fileID: 5476609557719665274}
+  - component: {fileID: 4578740022344269430}
   m_Layer: 0
   m_Name: ProcessContoller
   m_TagString: Untagged
@@ -3455,6 +3455,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentProcess: 0
+--- !u!114 &4578740022344269430
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9184814993077085872}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b8a510387f7ed234d9802faaddc9f60f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  unitAwakenChange: 3
+  unitImmersiveChange: 5
 --- !u!1001 &4648433503301364244
 PrefabInstance:
   m_ObjectHideFlags: 0

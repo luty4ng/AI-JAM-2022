@@ -18,7 +18,9 @@ public static class DialogPhaser
         "linkto",
         "mood",
         "cdivider",
-        "ccomplete"
+        "ccomplete",
+        "awaken",
+        "immersive",
     };
     public static List<string> prioritizedSemantics = new List<string>() // 该语法集合不会自动上链
     {
@@ -137,6 +139,18 @@ public static class DialogPhaser
                     }
                 }
 
+                if (semantic == "awaken")
+                {
+                    string indicatorValue = value.Trim().RemoveBracket();
+                    node.nodeEntity.AwakenIndicator = indicatorValue == "1" ? 1 : -1;
+                }
+
+                if (semantic == "immersive")
+                {
+                    string indicatorValue = value.Trim().RemoveBracket();
+                    node.nodeEntity.ImmersiveIndicator = indicatorValue == "1" ? 1 : -1;
+                }
+
                 if (semantic == "cdivider")
                 {
                     node.nodeEntity.IsDivider = true;
@@ -147,7 +161,7 @@ public static class DialogPhaser
                         Debug.LogError($"[Phaser] cdivider command require at least 3 parameters");
                         return;
                     }
-                    
+
                     node.nodeEntity.dividerConditions = cparams[0].Trim().RemoveBracket().Split('&').ToList();
                     // Debug.Log(smallBracketRegex.Match(cparams[0]));
                     tree.CachedLinkToDeclared(node, cparams[1]);
