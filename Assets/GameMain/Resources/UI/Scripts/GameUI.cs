@@ -15,6 +15,8 @@ public class GameUI : UIGroup
     public Button ArchiveBtn;
     public Button BackpackBtn;
 
+    
+
     //限定值
     public int limitValue = 50;
     public Slider m_immerseValue;
@@ -22,15 +24,21 @@ public class GameUI : UIGroup
 
     public void ImmerseAdd(int addNum)
     {
-        m_immerseValue.DOValue(m_immerseValue.value + addNum, 1f);
+        m_immerseValue.DOValue(m_immerseValue.value+addNum, 1f);
         if (m_immerseValue.value > limitValue)
         {
-
+            SceneController.current.GoToSceneByID(5);
+            ProcessController.current.currentProcess = ProcessController.Process.isEnd;
         }
     }
     public void SoberAdd(int addNum)
     {
         m_soberValue.DOValue(m_soberValue.value + addNum, 1f);
+        if (m_soberValue.value > limitValue)
+        {
+            SceneController.current.GoToSceneByID(6);
+            ProcessController.current.currentProcess = ProcessController.Process.isEnd;
+        }
     }
 
 

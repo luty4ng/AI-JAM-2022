@@ -15,9 +15,9 @@ using System;
 public class DialogSystem : MonoSingletonBase<DialogSystem>
 {
 
-   // [SerializeField]
-   // public static int Dialog_SceneID = 0;
-   // public  int Dialog_SceneID_cansee= Dialog_SceneID;
+    // [SerializeField]
+    // public static int Dialog_SceneID = 0;
+    // public  int Dialog_SceneID_cansee= Dialog_SceneID;
 
     public static bool IsActive = true;
     //对象池
@@ -29,13 +29,14 @@ public class DialogSystem : MonoSingletonBase<DialogSystem>
 
     private TextAnimatorPlayer textAnimatorPlayer;
     private Character currentCharacter;
+    private Dialog m_CachedDialogNodeEntity = null;
     private List<RuntimeAnimatorController> charaAnimators = new List<RuntimeAnimatorController>();
     private bool isOptionShowing = false;
     private bool isInSelection = false;
     //对话是否正在陆续显示中
     private bool isTextShowing = false;
     //对话是否已经结束了
-    public  bool isDialogEnd = false;
+    public bool isDialogEnd = false;
 
 
 
@@ -43,15 +44,15 @@ public class DialogSystem : MonoSingletonBase<DialogSystem>
     {
         //在ui注册表中获取对话框的ui面板
         uI_DialogSystem = UIManager.instance.GetUI<UI_DialogSystem>("UI_DialogSystem");
-        
+
         textAnimatorPlayer = uI_DialogSystem.textAnimatorPlayer;
     }
-    
+
     //根据对话资源开始对话
     public void StartDialog(string title, string dialogText)
     {
         Debug.Log($"Start Dialog");
-        
+
         isDialogEnd = false;
         isTextShowing = false;
         //创建对话树
@@ -66,7 +67,7 @@ public class DialogSystem : MonoSingletonBase<DialogSystem>
 
     private void Update()
     {
-       
+
 
         if (IsActive == false || dialogTree == null)
             return;
@@ -135,7 +136,7 @@ public class DialogSystem : MonoSingletonBase<DialogSystem>
     //对话进行角色改变
     private void UpdateUI(Node<Dialog> node)
     {
-        
+
         if (node == null || node.nodeEntity.speaker == "Default")
             return;
 
@@ -189,12 +190,14 @@ public class DialogSystem : MonoSingletonBase<DialogSystem>
     //开始
     private void ExcuteTextDisplay(Node<Dialog> nextNode)
     {
+
         if (nextNode == null)
         {
             ReachTheEndOfConversation();
             return;
         }
 
+        m_CachedDialogNodeEntity = nextNode.nodeEntity;
         isDialogEnd = false;
         if (nextNode.nodeEntity.IsFunctional)
         {
@@ -236,7 +239,7 @@ public class DialogSystem : MonoSingletonBase<DialogSystem>
             }
             else
             {
-                PhaseNode(nextNode);
+                PhaseNode(nextNode, PhaseAwakenAndImmersive);
             }
         }
     }
@@ -249,14 +252,19 @@ public class DialogSystem : MonoSingletonBase<DialogSystem>
         Node<Dialog> nextNode = GetNextNode(index);
         ExcuteTextDisplay(nextNode);
 
-
-
         //每次执行更新人物画面
-        if (uI_DialogSystem.uI_SpeakerPicLeft.overrideSprite!=currentCharacter.characterPic)
+        if (uI_DialogSystem.uI_SpeakerPicLeft.overrideSprite != currentCharacter.characterPic)
         {
             uI_DialogSystem.uI_SpeakerPicLeft.overrideSprite = currentCharacter.characterPic;
         }
-        
+    }
+
+    private void PhaseAwakenAndImmersive()
+    {
+        if (m_CachedDialogNodeEntity == null)
+            return;
+        EventManager.instance.EventTrigger<int>(EventSettings.AWAKEN_CHANGE, m_CachedDialogNodeEntity.AwakenIndicator);
+        EventManager.instance.EventTrigger<int>(EventSettings.IMMERSIVE_CHANGE, m_CachedDialogNodeEntity.ImmersiveIndicator);
     }
 
 
@@ -276,9 +284,10 @@ public class DialogSystem : MonoSingletonBase<DialogSystem>
         dialogTree = null;
         uI_DialogSystem.Hide();
         isDialogEnd = true;
+        m_CachedDialogNodeEntity = null;
 
         //进入下一场景
-        SceneController.current_SceneID ++;
+        SceneController.current_SceneID++;
         if (SceneController.current_SceneID < 4)
         {
             GoToNextScene("SceneID_ " + SceneController.current_SceneID);

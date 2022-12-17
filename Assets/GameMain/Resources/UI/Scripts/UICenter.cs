@@ -7,6 +7,7 @@ public class UICenter : MonoSingletonBase<UICenter>
     public Transform UI_Instances;
     public T OpenUI<T>(string name) where T : UIGroup
     {
+        Debug.Log(name);
         if (UIManager.instance.HasUI<T>(name))
         {
             T ui = UIManager.instance.GetUI<T>(name);
