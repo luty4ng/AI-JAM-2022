@@ -50,8 +50,10 @@ public class SceneController: MonoSingletonBase<SceneController>
 
     public void BackToMenu()
     {
+        
         ProcessController.current.currentProcess = ProcessController.Process.isMenu;
         current_SceneID = 0;
         Scheduler.current.SwitchSceneByDefault("SceneID_ 0");
+        UICenter.current.CloseUI<GameUI>("GameUI");
     }
 }

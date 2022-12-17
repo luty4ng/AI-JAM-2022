@@ -14,12 +14,19 @@ public class GameUI : UIGroup
     public Button OptionBtn;
     public Button ArchiveBtn;
     public Button BackpackBtn;
+
+    //限定值
+    public int limitValue = 50;
     public Slider m_immerseValue;
     public Slider m_soberValue;
 
     public void ImmerseAdd(int addNum)
     {
         m_immerseValue.DOValue(m_immerseValue.value + addNum, 1f);
+        if (m_immerseValue.value > limitValue)
+        {
+
+        }
     }
     public void SoberAdd(int addNum)
     {
@@ -49,26 +56,22 @@ public class GameUI : UIGroup
         OptionBtn.onClick.AddListener(OnOptionBtnClick);
         BackpackBtn.onClick.AddListener(OnBackpackBtnClick);
         ArchiveBtn.onClick.AddListener(OnArchiveBtnClick);
-
-
     }
 
     private void OnHomeBtnClick()
     {
         //场景控制器 的当前场景id转换到主菜单
-        SceneController.current_SceneID = 0;
-        Scheduler.current.SwitchSceneByDefault("SceneID_ 0");
-        UICenter.current.OpenUI<MenuUI>("MenuUI");
+        SceneController.current.BackToMenu();
     }
 
     private void OnArchiveBtnClick()
     {
-        
+        UIController.current.OnArchiveBtnClick();
     }
 
     private void OnBackpackBtnClick()
     {
-        
+        UIController.current.OnBackpackBtnClick();
     }
 
     private void OnOptionBtnClick()

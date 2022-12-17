@@ -15,7 +15,10 @@ public class UIController : MonoSingletonBase<UIController>
     MenuUI m_menuUI;
 
     ArchiveUI m_archiveUI;
-    bool archiveOpen=false;
+    bool archiveOpen=false;  
+
+    BackpackUI m_backpackUI;
+    bool backpackOpen=false;
 
 
     private void Update()
@@ -49,7 +52,16 @@ public class UIController : MonoSingletonBase<UIController>
 
     public void OnBackpackBtnClick()
     {
-
+        if (!backpackOpen)
+        {
+            m_backpackUI = UICenter.current.OpenUI<BackpackUI>("BackpackUI");
+            backpackOpen = true;
+        }
+        else
+        {
+            UICenter.current.CloseUI<BackpackUI>(m_backpackUI.idName);
+            backpackOpen = false;
+        }
     }
 
     public void OnOptionBtnClick()

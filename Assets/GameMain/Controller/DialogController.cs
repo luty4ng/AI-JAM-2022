@@ -9,7 +9,7 @@ public class DialogController: MonoSingletonBase<DialogController>
 
     
 
-    public DialogAsset dialogAsset;
+   
     public List<DialogAsset> dialogAssetList = new List<DialogAsset>();
 
 
