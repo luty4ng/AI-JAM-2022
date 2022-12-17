@@ -23,26 +23,43 @@ public class GameUI : UIGroup
     public Slider m_soberValue;
 
 
+    protected override void OnStart()
+    {
+        HomeBtn.onClick.AddListener(OnHomeBtnClick);
+        OptionBtn.onClick.AddListener(OnOptionBtnClick);
+        BackpackBtn.onClick.AddListener(OnBackpackBtnClick);
+        ArchiveBtn.onClick.AddListener(OnArchiveBtnClick);
+
+        EventManager.instance.AddEventListener<int>(EventSettings.AWAKEN_CHANGE, SoberAdd);
+        EventManager.instance.AddEventListener<int>(EventSettings.IMMERSIVE_CHANGE, ImmerseAdd);
+    }
+
     public void ImmerseAdd(int addNum)
     {
         
+        addNum *= 10;
         m_immerseValue.DOValue(m_immerseValue.value+addNum, 1f);
+
+        //到达限定值以后直接跳转
         if (m_immerseValue.value > limitValue&&SceneController.current_SceneID!=5)
         {
-             SceneController.current.GoToSceneByID(5);
+            SceneController.current.GoToSceneByID(5);
             ProcessController.current.currentProcess = ProcessController.Process.isEnd;
             DialogController.current.GoImmerse();
+            UIController.current.OpenOrCloseGameUI();
         }
     }
     public void SoberAdd(int addNum)
     {
-        
+        addNum *= 10;
         m_soberValue.DOValue(m_soberValue.value + addNum, 1f);
         if (m_soberValue.value > limitValue && SceneController.current_SceneID != 6)
         {
             SceneController.current.GoToSceneByID(6);
             ProcessController.current.currentProcess = ProcessController.Process.isEnd;
             DialogController.current.GoAwake();
+            UIController.current.OpenOrCloseGameUI();
+
         }
     }
 
@@ -61,17 +78,6 @@ public class GameUI : UIGroup
         {
             panelCanvasGroup.gameObject.SetActive(false);
         });
-    }
-
-    protected override void OnStart()
-    {
-        HomeBtn.onClick.AddListener(OnHomeBtnClick);
-        OptionBtn.onClick.AddListener(OnOptionBtnClick);
-        BackpackBtn.onClick.AddListener(OnBackpackBtnClick);
-        ArchiveBtn.onClick.AddListener(OnArchiveBtnClick);
-
-        EventManager.instance.AddEventListener<int>(EventSettings.AWAKEN_CHANGE, SoberAdd);
-        EventManager.instance.AddEventListener<int>(EventSettings.IMMERSIVE_CHANGE, ImmerseAdd);
     }
 
     private void OnHomeBtnClick()

@@ -303,16 +303,8 @@ public class DialogSystem : MonoSingletonBase<DialogSystem>
         isDialogEnd = true;
         m_CachedDialogNodeEntity = null;
 
-        //进入下一场景
-        SceneController.current_SceneID++;
-        if (SceneController.current_SceneID < 4)
-        {
-            GoToNextScene("SceneID_ " + SceneController.current_SceneID);
-        }
-        else
-        {
-            GoToNextScene("SceneID_ 0");
-        }
+
+        EventManager.instance.EventTrigger(EventSettings.DIALOG_END);
     }
 
     public void GoToNextScene(string name)

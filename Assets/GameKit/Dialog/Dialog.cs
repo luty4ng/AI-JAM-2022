@@ -20,17 +20,11 @@ public sealed class Dialog : NodeType
     public bool IsFunctional = false;
     public bool IsDivider = false;
     public bool IsCompleter = false;
-    /// <summary>
-    /// �ýڵ���Ҫ���ӵ�������ֵ
-    /// </summary>
+
     public int AwakenIndicator = 0;
-    /// <summary>
-    /// �ýڵ���Ҫ���ӵĳ�����ֵ
-    /// </summary>
+
     public int ImmersiveIndicator = 0;
-    /// <summary>
-    /// �ýڵ����ת�ĳ���id
-    /// </summary>
+
     public int SceneToIndicator = -1;
 
     public List<string> completeConditons;

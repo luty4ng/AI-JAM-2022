@@ -324,11 +324,11 @@ PrefabInstance:
     - target: {fileID: 3832723309906788879, guid: 0d9804c5c560d1b458025b708648bb13, type: 3}
       propertyPath: dialogAssetList.Array.data[0]
       value: 
-      objectReference: {fileID: 11400000, guid: 460d791d0a388114e8e46e447e105ff4, type: 2}
+      objectReference: {fileID: 11400000, guid: 183cd15b374a27640845fd12e172886a, type: 2}
     - target: {fileID: 3832723309906788879, guid: 0d9804c5c560d1b458025b708648bb13, type: 3}
       propertyPath: dialogAssetList.Array.data[1]
       value: 
-      objectReference: {fileID: 11400000, guid: 183cd15b374a27640845fd12e172886a, type: 2}
+      objectReference: {fileID: 11400000, guid: 460d791d0a388114e8e46e447e105ff4, type: 2}
     - target: {fileID: 3832723309906788879, guid: 0d9804c5c560d1b458025b708648bb13, type: 3}
       propertyPath: dialogAssetList.Array.data[2]
       value: 
@@ -379,11 +379,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4578740022344269430, guid: 0d9804c5c560d1b458025b708648bb13, type: 3}
       propertyPath: unitAwakenChange
-      value: 30
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4578740022344269430, guid: 0d9804c5c560d1b458025b708648bb13, type: 3}
       propertyPath: unitImmersiveChange
-      value: 20
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 5476609557719665274, guid: 0d9804c5c560d1b458025b708648bb13, type: 3}
       propertyPath: currentProcess

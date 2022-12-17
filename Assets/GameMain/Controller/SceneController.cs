@@ -21,9 +21,16 @@ public class SceneController : MonoSingletonBase<SceneController>
             continueBtn.SetActive(false);
         }
         EventManager.instance.AddEventListener<int>(EventSettings.SCENE_TO, GoToSceneByID);
+        EventManager.instance.AddEventListener(EventSettings.DIALOG_END, GoToNextScene);
     }
 
-
+    //进入下一场景
+    public void GoToNextScene()
+    {
+        current_SceneID++;
+        GoToSceneByID(current_SceneID);
+            
+    }
 
     public void Update()
     {

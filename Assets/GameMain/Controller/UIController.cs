@@ -7,12 +7,14 @@ using UnityEngine.UI;
 public class UIController : MonoSingletonBase<UIController>
 {
     UIExample_Panel m_CachedUIExample;
-    GameUI  m_gameUI;
-    
+
     OptionUI m_optionUI;
     bool optionOpen=false;
 
     MenuUI m_menuUI;
+
+    GameUI m_gameUI;
+    bool gameUIOpen = false;
 
     ArchiveUI m_archiveUI;
     bool archiveOpen=false;  
@@ -30,6 +32,22 @@ public class UIController : MonoSingletonBase<UIController>
     private void Start()
     {
         UICenter.current.OpenUI<MenuUI>("MenuUI");
+    }
+
+
+    public void OpenOrCloseGameUI()
+    {
+        if (!gameUIOpen)
+        {
+            m_gameUI = UICenter.current.OpenUI<GameUI>("GameUI");
+            gameUIOpen = true;
+        }
+        else
+        {
+            UICenter.current.CloseUI<GameUI>(m_gameUI.idName);
+            gameUIOpen = false;
+        }
+
     }
     public void OnArchiveBtnClick()
     {
