@@ -20,6 +20,8 @@ public sealed class Dialog : NodeType
     public bool IsFunctional = false;
     public bool IsDivider = false;
     public bool IsCompleter = false;
+    public int AwakenIndicator = 0;
+    public int ImmersiveIndicator = 0;
     public List<string> completeConditons;
     public List<string> dividerConditions;
 

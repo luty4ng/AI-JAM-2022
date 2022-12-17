@@ -13,7 +13,12 @@ namespace GameKit
             get
             {
                 if (Current == null)
-                    Debug.LogError($"Mono Singleton Is Not Initialized.");
+                {
+                    Debug.LogWarning($"Mono Singleton Is Not Initialized in Mono LifeCycle, Try find now.");
+                    Current = FindObjectOfType<T>();
+                    if(Current == null)
+                        Debug.LogError($"Mono Singleton Is Not Initialized.");
+                }
                 return Current;
             }
         }
