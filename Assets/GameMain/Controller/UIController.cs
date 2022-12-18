@@ -48,6 +48,8 @@ public class UIController : MonoSingletonBase<UIController>
               BackGroundList[current_BackgroundID].gameObject.SetActive(false);
         }
         BackGroundList[background_ID].gameObject.SetActive(true);
+
+        //BackGroundList[background_ID].gameObject.GetComponent<AudioSource>().DOFade(0f, 1.5f).onComplete{ };
         current_BackgroundID = background_ID;
     }
 

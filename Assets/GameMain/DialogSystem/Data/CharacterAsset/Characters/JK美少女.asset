@@ -15,6 +15,6 @@ MonoBehaviour:
   idName: "JK\u7F8E\u5C11\u5973"
   displayName: "JK\u7F8E\u5C11\u5973"
   iconicColor: {r: 0.15686275, g: 0.15686275, b: 0.15686275, a: 0}
-  characterPic: {fileID: 21300000, guid: 1002f422ea9a7ce4ea1c47b1c8a78885, type: 3}
+  characterPic: {fileID: 21300000, guid: 6a89cc5e221444443927db997fc85da1, type: 3}
   introduction: "\u8FD9\u4E2A\u4EBA\u662Ftrojan"
   moods: []
