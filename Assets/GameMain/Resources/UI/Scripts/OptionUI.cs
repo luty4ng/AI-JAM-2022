@@ -23,8 +23,8 @@ public class OptionUI : UIGroup
 
     private void OnBgmValueChange(float arg0)
     {
-        //MusicController.current.ChangeBGMSoundValue(arg0);
-        if (arg0<=0.01)
+        MusicController.current.ChangeBGMSoundValue(arg0);
+        if (arg0<=-79.5)
         {
             bgmTog.isOn = false;
         }
@@ -38,11 +38,11 @@ public class OptionUI : UIGroup
     {
         if(arg0 == false)
         {
-            OnBgmValueChange(0f);
+            OnBgmValueChange(-80f);
         }
         else
         {
-            OnBgmValueChange(0.1f);
+            OnBgmValueChange(-20f);
         }
     }
 
