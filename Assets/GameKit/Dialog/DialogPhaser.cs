@@ -23,7 +23,9 @@ public static class DialogPhaser
         "awaken",
         "immersive",
         //跳转场景
-        "sceneto"
+        "sceneto",
+        //背景变换
+        "background"
     };
     public static List<string> prioritizedSemantics = new List<string>() // 该语法集合不会自动上链
     {
@@ -154,14 +156,14 @@ public static class DialogPhaser
                     node.nodeEntity.ImmersiveIndicator = indicatorValue == "1" ? 1 : -1;
                 }
 
-                if (semantic == "backgroundChangeID")
+                if (semantic == "background")
                 {
                     string indicatorValue = value.Trim().RemoveBracket();
 
                     //将string类型改成int
                     int temp = -1;
                     int.TryParse(indicatorValue, out temp);
-                    node.nodeEntity.SceneToIndicator = temp;
+                    node.nodeEntity.BackgroundChangeID = temp;
                     Debug.Log("从文本内容加载背景" + temp);
                 }
 

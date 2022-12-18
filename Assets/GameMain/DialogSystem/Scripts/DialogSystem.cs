@@ -280,7 +280,7 @@ public class DialogSystem : MonoSingletonBase<DialogSystem>
     {
         if (m_CachedDialogNodeEntity == null)
             return;
-        if (m_CachedDialogNodeEntity.SceneToIndicator != -1)
+        if (m_CachedDialogNodeEntity.BackgroundChangeID != -1)
             EventManager.instance.EventTrigger<int>(EventSettings.BACKGROUND_CHANGE, m_CachedDialogNodeEntity.BackgroundChangeID);
     }
 
