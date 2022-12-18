@@ -6,6 +6,7 @@ using GameKit.DataStructure;
 [System.Serializable]
 public class Option
 {
+    
     public int autoIncreaseIndex;
     public bool multiParse;
     public string text;
@@ -27,6 +28,7 @@ public class Option
 
 public class DialogSelection
 {
+    
     private static List<Option> options;
     private static int currentIndex = 0;
 

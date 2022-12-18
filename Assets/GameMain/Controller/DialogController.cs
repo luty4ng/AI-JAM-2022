@@ -7,9 +7,6 @@ using System.Collections.Generic;
 public class DialogController: MonoSingletonBase<DialogController>
 {
 
-    
-
-   
     public List<DialogAsset> dialogAssetList = new List<DialogAsset>();
 
     public int SceneID_ImmerseEnding;
@@ -22,6 +19,10 @@ public class DialogController: MonoSingletonBase<DialogController>
         if (Input.GetKeyDown(KeyCode.A))
         {
             StartCurrentDialog();
+        }        
+        if (Input.GetKeyDown(KeyCode.A))
+        {
+            Debug.LogWarning("debug");
         }
 
     }
